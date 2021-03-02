@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styling/globals.css"
+import Footer from "./components/Footer"
+import Header from "./components/Header"
+import Navbar from "./components/Navbar"
+import Average from "./components/Average"
+import Student from "./components/Student"
+import Assignment from "./components/Assignment"
+import React from "react"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { StudentStateProvider } from "./components/StudentStateContext"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Router>
+			<div className="App">
+				<StudentStateProvider>
+					<Header />
+					<Navbar />
+					<Switch>
+						<Route exact path="/">
+							<Average />
+						</Route>
+						<Route exact path="/student/:name">
+							<Student />
+						</Route>
+						<Route exact path="/assignment/:name">
+							<Assignment />
+						</Route>
+					</Switch>
+					<Footer />
+				</StudentStateProvider>
+			</div>
+		</Router>
+	)
 }
 
-export default App;
+export default App

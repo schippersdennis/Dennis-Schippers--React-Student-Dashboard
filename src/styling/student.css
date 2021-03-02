@@ -1,0 +1,9 @@
+.student {
+	grid-area: m;
+}
+.filter-options ul {
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(5, 250px);
+	grid-template-rows: repeat(12, 15px);
+}
