@@ -1,5 +1,4 @@
-import { sort } from "d3"
-import React, { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { StudentStateContext } from "./StudentStateContext"
 
 const useDashBoard = () => {
@@ -28,9 +27,10 @@ const useDashBoard = () => {
 
 	// build average assignments
 	const buildAssignments = [...studentsData.assignments].map((assignment) => {
-		let enjoyment = []
-		let difficulty = []
-		let amountStudents = Object.entries({ ...studentsData.data }).filter(
+		let difficulty = 0
+		let enjoyment = 0
+
+		const amountStudents = Object.entries({ ...studentsData.data }).filter(
 			(item) => item[1].checked
 		).length
 
@@ -39,25 +39,53 @@ const useDashBoard = () => {
 			.forEach((item) => {
 				item[1].assignments.forEach((job) => {
 					if (job.assignment === assignment) {
-						enjoyment.push(job.enjoymentRating)
-						difficulty.push(job.difficultyRating)
+						difficulty += job.difficultyRating
+						enjoyment += job.enjoymentRating
 					}
 				})
 			})
 
-		const averageDifficulty =
-			difficulty.length >= 2 &&
-			difficulty.reduce((numA, numB) => numA + numB) / amountStudents
-		const averageEnjoyment =
-			enjoyment.length >= 2 &&
-			enjoyment.reduce((numA, numB) => numA + numB) / amountStudents
-
 		return {
 			assignment: assignment,
-			difficultyRating: averageDifficulty,
-			enjoymentRating: averageEnjoyment,
+			difficultyRating: difficulty / amountStudents,
+			enjoymentRating: enjoyment / amountStudents,
 		}
 	})
+
+	//sort
+	const stringCompare = (str1, str2) => {
+		str1 = str1.toLowerCase()
+		str2 = str2.toLowerCase()
+
+		if (str1 > str2) return 1
+		if (str2 > str1) return -1
+		return 0
+	}
+	const numCompare = (num1, num2) => num1 - num2
+
+	const sortHandler = (sample, key) => {
+		const dataType = typeof sample
+		const sortArray = (a, b) => {
+			a = a[key]
+			b = b[key]
+			if (dataType === "string") return stringCompare(a, b)
+			if (dataType === "number") return numCompare(a, b)
+		}
+		return sortArray
+	}
+
+	const setSort = (key, arr) => {
+		const sample = arr[0][key]
+		return arr.sort(sortHandler(sample, key))
+	}
+
+	const averageFilter = (value) => {
+		const updateAverageFilter = { ...studentsData.average }
+		updateAverageFilter.filter = value
+		setStudentsData((prevState) => {
+			return { ...prevState, average: updateAverageFilter }
+		})
+	}
 
 	//counter students include @ average
 	const studentCheckedCounter = Object.entries(studentsData.data).filter(
@@ -80,9 +108,7 @@ const useDashBoard = () => {
 	}
 	const selectAllAssignments = (name) => {
 		const updateStudentsData = { ...studentsData.data }
-		updateStudentsData[name].assignments.map(
-			(assignemnt) => (assignemnt.checked = !assignemnt.checked)
-		)
+		updateStudentsData[name].assignments.map((item) => (item.checked = !item.checked))
 		setStudentsData((prevState) => {
 			return { ...prevState, data: updateStudentsData }
 		})
@@ -91,67 +117,40 @@ const useDashBoard = () => {
 		return arr.filter((item) => item.checked)
 	}
 
-	//sort
-	const stringCompare = (str1, str2) => {
-		str1 = str1.toLowerCase()
-		str2 = str2.toLowerCase()
-
-		if (str1 > str2) return 1
-		if (str2 > str1) return -1
-		return 0
-	}
-	const numCompare = (num1, num2) => num1 - num2
-
-	const sortHandler = (typeData, key) => {
-		const dataType = typeof typeData
-
-		const sortArray = (a, b) => {
-			a = a[key]
-			b = b[key]
-			if (dataType === "string") return stringCompare(a, b)
-			if (dataType === "number") return numCompare(a, b)
-		}
-		return sortArray
-	}
-
-	const setSort = (key, name) => {
-		setRadio(key, name)
-		const updateSorted = { ...studentsData }
-		const typeData = updateSorted.data[name].assignments[0][key]
-		updateSorted.data[name].assignments.sort(sortHandler(typeData, key))
-
-		setStudentsData((prevState) => {
-			return { ...prevState, updateSorted }
-		})
-	}
-	const setRadio = (key, name) => {
-		const copyRadioStatus = { ...studentsData.data }
-		//reset values
-		copyRadioStatus[name].radioBox.enjoymentRating = false
-		copyRadioStatus[name].radioBox.difficultyRating = false
-		copyRadioStatus[name].radioBox.assignment = false
-		//set new value
-		copyRadioStatus[name].radioBox[key] = !copyRadioStatus[name].radioBox[key]
-
-		setStudentsData((prevState) => {
-			return { ...prevState, data: copyRadioStatus }
+	const setRadio = (value, state, data, name) => {
+		const updateRadio = { ...state }
+		const placeholder = name
+			? updateRadio[data][name].radioBox
+			: updateRadio[data].radioBox
+		//Reset RadioBtns
+		placeholder.enjoymentRating = false
+		placeholder.difficultyRating = false
+		placeholder.assignment = false
+		//Set new value
+		placeholder[value] = !placeholder[value]
+		//update State
+		setStudentsData(() => {
+			return updateRadio
 		})
 	}
 
-	// all custom hook variables & functions
 	return {
-		students: studentsData.students,
-		assignments: studentsData.assignments,
-		data: studentsData.data,
-		counter: studentCheckedCounter,
-		studentSwitch,
-		averageAssignments: buildAssignments,
-		handleCheckAssignment,
-		filterChecked,
-		setSort,
-		selectAllAssignments,
 		dataAssignments: studentsData.dataAssignments,
+		assignments: studentsData.assignments,
+		averageAssignments: buildAssignments,
+		averageData: studentsData.average,
+		students: studentsData.students,
+		counter: studentCheckedCounter,
+		studentsData: studentsData,
+		data: studentsData.data,
+		handleCheckAssignment,
+		selectAllAssignments,
 		assignmentSwitch,
+		filterChecked,
+		studentSwitch,
+		averageFilter,
+		setRadio,
+		setSort,
 	}
 }
 

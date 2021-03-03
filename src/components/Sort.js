@@ -1,20 +1,21 @@
 import React from "react"
 import useDashBoard from "./useDashBoard"
 
-const Sort = ({ name, id }) => {
-	const { data, setSort } = useDashBoard()
+const Sort = ({ state, data, name, condition }) => {
+	const { setRadio } = useDashBoard()
+	const checked = name ? state[data][name] : state[data]
 
 	return (
 		<form
 			defaultChecked
 			onChange={(event) => {
 				const value = event.target.value
-				setSort(value, name)
+				setRadio(value, state, data, name)
 			}}
 		>
 			<input
 				readOnly
-				checked={data[name].radioBox.enjoymentRating === true}
+				checked={checked.radioBox.enjoymentRating}
 				type="radio"
 				name="radio"
 				value="enjoymentRating"
@@ -22,7 +23,7 @@ const Sort = ({ name, id }) => {
 			sort by enjoy
 			<input
 				readOnly
-				checked={data[name].radioBox.difficultyRating === true}
+				checked={checked.radioBox.difficultyRating}
 				type="radio"
 				name="radio"
 				value="difficultyRating"
@@ -30,12 +31,12 @@ const Sort = ({ name, id }) => {
 			sort by difficulty
 			<input
 				readOnly
-				checked={data[name].radioBox.assignment === true}
+				checked={checked.radioBox.assignment}
 				type="radio"
 				name="radio"
 				value="assignment"
 			/>{" "}
-			sort by assignment
+			sort by {condition === "name" ? "name" : "assignment"}
 		</form>
 	)
 }

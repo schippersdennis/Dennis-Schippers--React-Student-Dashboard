@@ -1,6 +1,6 @@
 import React from "react"
-import Chart from "./Chart"
 import Sort from "./Sort"
+import Chart from "./Chart"
 import "../styling/student.css"
 import Form from "react-bootstrap/Form"
 import useDashBoard from "./useDashBoard"
@@ -9,10 +9,9 @@ import { StudentSwitch } from "./StudentSwitch"
 
 const Student = () => {
 	const { name } = useParams()
-	const { data, filterChecked, setSort, selectAllAssignments } = useDashBoard()
+	const { data, filterChecked, setSort, selectAllAssignments, studentsData } = useDashBoard()
 
-	const updatedData = filterChecked(data[name].assignments)
-
+	//Assignment Checkboxes
 	const filterAssignments = data[name].assignments.map((assignment, index) => {
 		return (
 			<StudentSwitch
@@ -23,6 +22,12 @@ const Student = () => {
 			/>
 		)
 	})
+	//Sort + Filter Options
+	const keys = Object.keys(data[name].radioBox)
+	const sortValue = keys.filter((key) => data[name].radioBox[key]).toString()
+
+	const updatedData = filterChecked(data[name].assignments)
+	const sortedArr = updatedData.length > 0 ? setSort(sortValue, updatedData) : updatedData
 
 	return (
 		<div className="student">
@@ -44,52 +49,11 @@ const Student = () => {
 				</div>
 				<div className="sort-options">
 					<h4>Sort options</h4>
-					<Sort name={name} id={"student"} />
-					{/* <form
-						defaultChecked
-						onChange={(event) => {
-							const value = event.target.value
-							setSort(value, name)
-						}}
-					>
-						<input
-							readOnly
-							checked={
-								data[name].radioBox
-									.enjoymentRating === true
-							}
-							type="radio"
-							name="radio"
-							value="enjoymentRating"
-						/>{" "}
-						sort by enjoy
-						<input
-							readOnly
-							checked={
-								data[name].radioBox
-									.difficultyRating === true
-							}
-							type="radio"
-							name="radio"
-							value="difficultyRating"
-						/>
-						sort by difficulty
-						<input
-							readOnly
-							checked={
-								data[name].radioBox.assignment ===
-								true
-							}
-							type="radio"
-							name="radio"
-							value="assignment"
-						/>{" "}
-						sort by assignment
-					</form> */}
+					<Sort state={studentsData} data="data" name={name} />
 				</div>
 			</div>
 
-			<Chart data={updatedData} />
+			<Chart data={sortedArr} />
 		</div>
 	)
 }

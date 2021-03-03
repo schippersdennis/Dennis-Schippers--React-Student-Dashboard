@@ -8,8 +8,8 @@ import { StudentSwitch } from "./StudentSwitch"
 
 const Assignment = () => {
 	const { name } = useParams()
-	const { dataAssignments } = useDashBoard()
-
+	const { dataAssignments, studentsData, setSort } = useDashBoard()
+	//Building Student Switch Buttons
 	const studentsOverview = dataAssignments[name].students.map((student, index) => {
 		return (
 			<StudentSwitch
@@ -23,12 +23,15 @@ const Assignment = () => {
 	const chartData = dataAssignments[name].students
 		.filter((student) => student.checked)
 		.map((student) => {
-			console.log(student)
 			student["assignment"] = student["name"]
-
 			return student
 		})
 	const counter = chartData.length
+	/////////////////////////////////////////////////
+	//Sort + Filter Options
+	const keys = Object.keys(dataAssignments[name].radioBox)
+	const sortValue = keys.filter((key) => dataAssignments[name].radioBox[key]).toString()
+	const sortedArr = setSort(sortValue, chartData)
 
 	return (
 		<div className="assignment">
@@ -40,8 +43,13 @@ const Assignment = () => {
 				</h4>
 				<ul>{studentsOverview}</ul>
 			</div>
-
-			<Chart data={chartData} />
+			<Sort
+				state={studentsData}
+				data="dataAssignments"
+				name={name}
+				condition={"name"}
+			/>
+			<Chart data={sortedArr} />
 		</div>
 	)
 }

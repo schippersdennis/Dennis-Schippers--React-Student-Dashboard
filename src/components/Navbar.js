@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React from "react"
 import "../styling/navbar.css"
 import { NavItem } from "./NavItem"
 import useDashBoard from "./useDashBoard"
@@ -7,9 +7,12 @@ import { NavLink } from "react-router-dom"
 const Navbar = () => {
 	const { students, assignments } = useDashBoard()
 
+	// Building Students Routing
 	const studentRoutes = students.map((person, index) => {
 		return <NavItem name={person} id={"student"} key={index} />
 	})
+
+	//Building Assignments Routing
 	const assignmentRoutes = assignments.map((assignment, index) => {
 		return <NavItem name={assignment} id={"assignment"} key={index} />
 	})

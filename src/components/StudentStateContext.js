@@ -8,6 +8,15 @@ export const StudentStateProvider = (props) => {
 		data: {},
 		students: [],
 		dataAssignments: [],
+		filterAverage: "",
+		average: {
+			filter: "showall",
+			radioBox: {
+				assignment: true,
+				enjoymentRating: false,
+				difficultyRating: false,
+			},
+		},
 	})
 
 	useEffect(() => {
@@ -43,6 +52,11 @@ export const StudentStateProvider = (props) => {
 				if (!assignmentData.hasOwnProperty(assignmentName)) {
 					assignmentData[assignmentName] = {
 						assignment: student.assignment,
+						radioBox: {
+							assignment: true,
+							enjoymentRating: false,
+							difficultyRating: false,
+						},
 						students: [],
 					}
 				}
@@ -67,6 +81,14 @@ export const StudentStateProvider = (props) => {
 				students: students,
 				data: updatedData,
 				dataAssignments: assignmentData,
+				average: {
+					filter: "showall",
+					radioBox: {
+						assignment: true,
+						enjoymentRating: false,
+						difficultyRating: false,
+					},
+				},
 			}
 
 			setStudentsData(() => {
