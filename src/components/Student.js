@@ -47,13 +47,21 @@ const Student = () => {
 						/>
 					</h4>
 				</div>
-				<div className="sort-options">
-					<h4>Sort options</h4>
-					<Sort state={studentsData} data="data" name={name} />
-				</div>
-			</div>
 
-			<Chart data={sortedArr} />
+				{sortedArr.length >= 2 && (
+					<div className="sort-options">
+						<h4>Sort options</h4>
+						<Sort
+							state={studentsData}
+							data="data"
+							name={name}
+						/>
+					</div>
+				)}
+			</div>
+			<div className="chart">
+				{sortedArr.length > 0 && <Chart data={sortedArr} />}
+			</div>
 		</div>
 	)
 }

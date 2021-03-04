@@ -47,8 +47,8 @@ const useDashBoard = () => {
 
 		return {
 			assignment: assignment,
-			difficultyRating: difficulty / amountStudents,
-			enjoymentRating: enjoyment / amountStudents,
+			difficultyRating: difficulty !== 0 ? difficulty / amountStudents : 0,
+			enjoymentRating: enjoyment !== 0 ? enjoyment / amountStudents : 0,
 		}
 	})
 

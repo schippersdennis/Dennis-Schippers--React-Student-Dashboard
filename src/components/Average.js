@@ -34,6 +34,15 @@ const Average = () => {
 		return items.assignment === averageData.filter
 	})
 
+	const dataCondition = () => {
+		if (sortedArr.length > 0 && averageData.filter === "showall") {
+			return sortedArr
+		} else {
+			return filterAverageData
+		}
+	}
+	const updateCondition = dataCondition()
+
 	return (
 		<div className="average">
 			<h1>show average results for students</h1>
@@ -54,6 +63,7 @@ const Average = () => {
 					{assignments.length})
 				</h3>
 				<select
+					defaultValue={studentsData.average.filter}
 					onChange={(event) => {
 						averageFilter(event.target.value)
 					}}
@@ -64,15 +74,9 @@ const Average = () => {
 					{assignmentCheckboxs}
 				</select>
 			</div>
-			<Chart
-				data={
-					sortedArr.length > 0
-						? averageData.filter === "showall"
-							? sortedArr
-							: filterAverageData
-						: averageAssignments
-				}
-			/>
+			<div className="chart">
+				{updateCondition.length > 0 && <Chart data={updateCondition} />}
+			</div>
 		</div>
 	)
 }
