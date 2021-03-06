@@ -1,3 +1,32 @@
+.nav-container {
+	font-size: 18px;
+	a {
+		color: rgb(34, 50, 67);
+	}
+	.students-overview-average {
+		display: flex;
+		justify-content: center;
+		ul {
+			list-style: none;
+		}
+	}
+	.student {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		ul {
+			list-style: none;
+		}
+	}
+	.assignments {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		ul {
+			list-style: none;
+		}
+	}
+}
 ::-webkit-scrollbar {
 	width: 3px;
 	height: 6px;
@@ -19,15 +48,7 @@ nav {
 	grid-area: n;
 	background-color: rgba(34, 50, 67, 0.295);
 }
-ul {
-	list-style: none;
-}
-li {
-	margin-left: -20px;
-}
 
-.assignments ul {
-	margin-right: 5px;
-	overflow-y: scroll;
-	max-height: 600px;
+.is-active {
+	background-color: salmon;
 }

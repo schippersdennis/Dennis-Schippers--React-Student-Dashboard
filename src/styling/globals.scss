@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200;300;400;500;600;700&display=swap");
+@import "./assignment";
+@import "./average";
+@import "./chart";
+@import "./footer";
+@import "./header";
+@import "./navbar";
+@import "./sort";
+@import "./student";
+
+@mixin flexCenterRow {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
+
+@mixin flexCenterCol {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+body {
+	margin: auto;
+	font-family: "Yanone Kaffeesatz", sans-serif !important;
+	background: rgb(248, 255, 219);
+	background: linear-gradient(90deg, rgba(248, 255, 219, 1) 0%, rgba(10, 156, 226, 1) 100%);
+	color: rgb(34, 50, 67);
+}
+
+.App {
+	height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto auto 1fr 100px;
+	grid-template-areas:
+		"h h h h"
+		"n n n n"
+		"m m m m"
+		"f f f f";
+}
+
+@media (min-width: 720px) {
+	.App {
+		height: 100vh;
+		display: grid;
+		grid-template-columns: 200px 1fr;
+		grid-template-rows: 100px 1fr 100px;
+		grid-template-areas:
+			"n h h h"
+			"n m m m"
+			"n f f f";
+	}
+}

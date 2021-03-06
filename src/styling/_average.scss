@@ -1,0 +1,37 @@
+.average {
+	grid-area: m;
+}
+
+.average h1 {
+	margin: 20px;
+}
+
+.student-switches {
+	margin: 20px;
+}
+.student-switches ul {
+	display: grid;
+	grid-template-columns: repeat(3, 200px);
+	grid-template-rows: repeat(4, auto);
+}
+.sort-option {
+	margin: 20px;
+}
+.assignment-options {
+	margin: 20px;
+}
+.assignment-options select {
+	cursor: pointer;
+	border: 1px solid rgb(34, 50, 67);
+	color: rgb(34, 50, 67);
+	border-radius: 5px;
+	outline: none;
+	padding: 5px;
+}
+.select-option {
+	color: rgb(34, 50, 67);
+	cursor: pointer;
+}
+.chart .test {
+	cursor: crosshair;
+}

@@ -1,7 +1,7 @@
 import Sort from "./Sort"
 import React from "react"
 import Chart from "./Chart"
-import "../styling/assignment.css"
+import "../styling/globals.css"
 import useDashBoard from "./useDashBoard"
 import { useParams } from "react-router-dom"
 import { StudentSwitch } from "./StudentSwitch"

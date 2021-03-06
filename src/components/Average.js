@@ -1,7 +1,7 @@
 import React from "react"
 import Sort from "./Sort"
 import Chart from "./Chart"
-import "../styling/average.css"
+import "../styling/globals.css"
 import useDashBoard from "./useDashBoard"
 import { StudentSwitch } from "./StudentSwitch"
 
@@ -22,7 +22,7 @@ const Average = () => {
 		return <StudentSwitch id={"student"} key={index} name={person} />
 	})
 	//Assignment Dropdown-Menu
-	const assignmentCheckboxs = assignments.map((assignment, index) => {
+	const assignmentOptions = assignments.map((assignment, index) => {
 		return <StudentSwitch id={"assignment"} key={index} name={assignment} />
 	})
 	//Sort + Filter Options
@@ -35,7 +35,7 @@ const Average = () => {
 	})
 
 	const dataCondition = () => {
-		if (sortedArr.length > 0 && averageData.filter === "showall") {
+		if (averageData.filter === "showall") {
 			return sortedArr
 		} else {
 			return filterAverageData
@@ -48,16 +48,19 @@ const Average = () => {
 			<h1>show average results for students</h1>
 			<div className="student-switches">
 				<h3>
-					select at least two students for a comparison of the average
+					Select at least two students for a comparison of the average
 					results ({counter}) of ({students.length})
 				</h3>
 				<ul>{studentSwitches}</ul>
 			</div>
-			{filterAverageData.length !== 1 ? (
-				<Sort state={studentsData} data="average" />
-			) : null}
+			<div className="sort-option">
+				<h4>Sort options</h4>
+				{filterAverageData.length !== 1 ? (
+					<Sort state={studentsData} data="average" />
+				) : null}
+			</div>
 
-			<div className="assignment-checkers">
+			<div className="assignment-options">
 				<h3>
 					Select assignment to show average per assignment - total (
 					{assignments.length})
@@ -71,7 +74,7 @@ const Average = () => {
 					<option default value="showall">
 						Overview 56 assignments
 					</option>
-					{assignmentCheckboxs}
+					{assignmentOptions}
 				</select>
 			</div>
 			<div className="chart">

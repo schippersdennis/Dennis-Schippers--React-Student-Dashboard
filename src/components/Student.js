@@ -1,7 +1,7 @@
 import React from "react"
 import Sort from "./Sort"
 import Chart from "./Chart"
-import "../styling/student.css"
+import "../styling/globals.css"
 import Form from "react-bootstrap/Form"
 import useDashBoard from "./useDashBoard"
 import { useParams } from "react-router-dom"

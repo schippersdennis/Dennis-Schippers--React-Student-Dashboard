@@ -1,5 +1,5 @@
 import React from "react"
-import "../styling/footer.css"
+import "../styling/globals.css"
 const Footer = () => {
 	return (
 		<footer>

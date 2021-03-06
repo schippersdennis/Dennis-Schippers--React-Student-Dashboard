@@ -1,5 +1,5 @@
 import React from "react"
-import "../styling/navbar.css"
+import "../styling/globals.css"
 import { NavItem } from "./NavItem"
 import useDashBoard from "./useDashBoard"
 import { NavLink } from "react-router-dom"
@@ -19,30 +19,32 @@ const Navbar = () => {
 
 	return (
 		<nav>
-			<div className="students-overview-average">
-				<h3>Students Overview</h3>
-				<ul>
-					<li>
-						<NavLink
-							className="nav-item"
-							activeClassName="is-active"
-							to={{
-								pathname: "/",
-								switch: true,
-							}}
-						>
-							average all students
-						</NavLink>{" "}
-					</li>
-				</ul>
-			</div>
-			<div className="student">
-				<h3>Students</h3>
-				<ul>{studentRoutes}</ul>
-			</div>
-			<div className="assignments">
-				<h3>Assignments</h3>
-				<ul>{assignmentRoutes}</ul>
+			<div className="nav-container">
+				<div className="students-overview-average">
+					<h3>Students Overview</h3>
+					<ul>
+						<li>
+							<NavLink
+								className="nav-item"
+								activeClassName="is-active"
+								to={{
+									pathname: "/",
+									switch: true,
+								}}
+							>
+								average all students
+							</NavLink>{" "}
+						</li>
+					</ul>
+				</div>
+				<div className="student">
+					<h3>Students</h3>
+					<ul>{studentRoutes}</ul>
+				</div>
+				<div className="assignments">
+					<h3>Assignments</h3>
+					<ul>{assignmentRoutes}</ul>
+				</div>
 			</div>
 		</nav>
 	)

@@ -1,19 +1,257 @@
 @import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200;300;400;500;600;700&display=swap");
-body {
-	margin: auto;
-	font-family: "Yanone Kaffeesatz", sans-serif;
+.assignment {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: m;
+}
 
-	background: rgb(248, 255, 219);
-	background: linear-gradient(90deg, rgba(248, 255, 219, 1) 0%, rgba(10, 156, 226, 1) 100%);
-	color: rgb(34, 50, 67);
+.average {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: m;
 }
+
+.average h1 {
+  margin: 20px;
+}
+
+.student-switches {
+  margin: 20px;
+}
+
+.student-switches ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (200px)[3];
+      grid-template-columns: repeat(3, 200px);
+  -ms-grid-rows: (auto)[4];
+      grid-template-rows: repeat(4, auto);
+}
+
+.sort-option {
+  margin: 20px;
+}
+
+.assignment-options {
+  margin: 20px;
+}
+
+.assignment-options select {
+  cursor: pointer;
+  border: 1px solid #223243;
+  color: #223243;
+  border-radius: 5px;
+  outline: none;
+  padding: 5px;
+}
+
+.select-option {
+  color: #223243;
+  cursor: pointer;
+}
+
+.chart .test {
+  cursor: crosshair;
+}
+
+footer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: f;
+  background-color: rgba(34, 50, 67, 0.295);
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: h;
+}
+
+.header-container {
+  font-size: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(34, 50, 67, 0.295);
+}
+
+.header-container .logo-students {
+  color: #f8ffdb;
+}
+
+.header-container .logo-students .angle {
+  margin-top: -10px;
+}
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg) scale(0.1);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg) scale(2.3);
+  }
+}
+
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg) scale(0.1);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg) scale(2.3);
+  }
+}
+
+.nav-container {
+  font-size: 18px;
+}
+
+.nav-container a {
+  color: #223243;
+}
+
+.nav-container .students-overview-average {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav-container .students-overview-average ul {
+  list-style: none;
+}
+
+.nav-container .student {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav-container .student ul {
+  list-style: none;
+}
+
+.nav-container .assignments {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav-container .assignments ul {
+  list-style: none;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(13deg, #737b7e 14%, #bfe7dc 65%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(13deg, #c7ceff 14%, #f9d4ff 64%);
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 7px 10px 12px #f0f0f0;
+          box-shadow: inset 7px 10px 12px #f0f0f0;
+}
+
+nav {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: n;
+  background-color: rgba(34, 50, 67, 0.295);
+}
+
+.is-active {
+  background-color: salmon;
+}
+
+.sort-form label {
+  margin-right: 20px;
+}
+
+.sort-form input {
+  margin-right: 5px;
+}
+
+.student {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: m;
+}
+
+.filter-options ul {
+  list-style: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (250px)[5];
+      grid-template-columns: repeat(5, 250px);
+  -ms-grid-rows: (15px)[12];
+      grid-template-rows: repeat(12, 15px);
+}
+
+body {
+  margin: auto;
+  font-family: "Yanone Kaffeesatz", sans-serif !important;
+  background: #f8ffdb;
+  background: -webkit-gradient(linear, left top, right top, from(#f8ffdb), to(#0a9ce2));
+  background: linear-gradient(90deg, #f8ffdb 0%, #0a9ce2 100%);
+  color: #223243;
+}
+
 .App {
-	height: 100vh;
-	display: grid;
-	grid-template-columns: 200px 1fr;
-	grid-template-rows: 100px 1fr 100px;
-	grid-template-areas:
-		"n h h h"
-		"n m m m"
-		"n f f f";
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: auto auto 1fr 100px;
+      grid-template-rows: auto auto 1fr 100px;
+      grid-template-areas: "h h h h" "n n n n" "m m m m" "f f f f";
 }
+
+@media (min-width: 720px) {
+  .App {
+    height: 100vh;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 200px 1fr;
+        grid-template-columns: 200px 1fr;
+    -ms-grid-rows: 100px 1fr 100px;
+        grid-template-rows: 100px 1fr 100px;
+        grid-template-areas: "n h h h" "n m m m" "n f f f";
+  }
+}
+/*# sourceMappingURL=globals.css.map */

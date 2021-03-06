@@ -1,7 +1,7 @@
 import React from "react"
 import Form from "react-bootstrap/Form"
 import useDashBoard from "./useDashBoard"
-
+import "bootstrap/dist/css/bootstrap.min.css"
 export const StudentSwitch = ({ name, id, assignment, student }) => {
 	const { studentSwitch, data, handleCheckAssignment, assignmentSwitch } = useDashBoard()
 
@@ -15,14 +15,18 @@ export const StudentSwitch = ({ name, id, assignment, student }) => {
 							studentSwitch(name)
 						}}
 						type="switch"
-						id="student-switch"
+						id={name}
 						label={name}
 					/>
 				</li>
 			)
 
 		case "assignment":
-			return <option value={name}>{name}</option>
+			return (
+				<option className="select-option" value={name}>
+					{name}
+				</option>
+			)
 		case "filter-assignment":
 			return (
 				<li>

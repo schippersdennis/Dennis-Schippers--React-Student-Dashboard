@@ -1,10 +1,18 @@
 import React from "react"
-import "../styling/header.css"
+import "../styling/globals.css"
+import { GiAngelWings } from "react-icons/gi"
 
 const Header = () => {
 	return (
 		<header>
-			<h1>header + logo</h1>
+			<div className="header-container">
+				<div className="logo-students">
+					St
+					<GiAngelWings className="angle" />
+					dents
+				</div>
+				<div className="logo-name">dashboard</div>
+			</div>
 		</header>
 	)
 }

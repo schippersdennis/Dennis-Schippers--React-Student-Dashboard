@@ -29,6 +29,7 @@ const useDashBoard = () => {
 	const buildAssignments = [...studentsData.assignments].map((assignment) => {
 		let difficulty = 0
 		let enjoyment = 0
+		let labelData = []
 
 		const amountStudents = Object.entries({ ...studentsData.data }).filter(
 			(item) => item[1].checked
@@ -37,19 +38,34 @@ const useDashBoard = () => {
 		Object.entries({ ...studentsData.data })
 			.filter((item) => item[1].checked)
 			.forEach((item) => {
+				let test = { name: item[0] }
 				item[1].assignments.forEach((job) => {
 					if (job.assignment === assignment) {
+						test.difficultyRating = job.difficultyRating
+						test.enjoymentRating = job.enjoymentRating
 						difficulty += job.difficultyRating
 						enjoyment += job.enjoymentRating
 					}
 				})
+				labelData.push(test)
 			})
-
 		return {
 			assignment: assignment,
-			difficultyRating: difficulty !== 0 ? difficulty / amountStudents : 0,
-			enjoymentRating: enjoyment !== 0 ? enjoyment / amountStudents : 0,
+			difficultyRating:
+				difficulty > 0 &&
+				parseFloat((difficulty / amountStudents).toFixed(2)),
+			enjoymentRating:
+				enjoyment > 0 &&
+				parseFloat((enjoyment / amountStudents).toFixed(2)),
+			labels: labelData,
 		}
+
+		// return {
+		// 	assignment: assignment,
+		// 	difficultyRating: difficulty !== 0 ? difficulty / amountStudents : 0,
+		// 	enjoymentRating: enjoyment !== 0 ? enjoyment / amountStudents : 0,
+		// 	labels: labelData,
+		// }
 	})
 
 	//sort

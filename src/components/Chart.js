@@ -1,4 +1,5 @@
 import React from "react"
+import "../styling/globals.css"
 
 import {
 	VictoryBar,
@@ -10,180 +11,19 @@ import {
 	VictoryLabel,
 	VictoryLegend,
 } from "victory"
-const wincTheme = {
-	axis: {
-		style: {
-			axis: {
-				fill: "transparent",
-				stroke: "#223243",
-				strokeWidth: 2,
-			},
-			axisLabel: {
-				textAnchor: "start",
-				fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-				fontSize: 5,
-				letterSpacing: "normal",
-				padding: 8,
-				fill: "#455A64",
-				stroke: "transparent",
-				strokeWidth: 0,
-			},
-			grid: {
-				fill: "none",
-				stroke: "none",
-			},
-			ticks: {
-				fill: "transparent",
-				size: 5,
-				stroke: "#223243",
-				strokeWidth: 1,
-				strokeLinecap: "round",
-				strokeLinejoin: "round",
-			},
-			tickLabels: {
-				fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-				textAnchor: "start",
-				fontSize: 7,
-				letterSpacing: "normal",
-				padding: 0,
 
-				fill: "#455A64",
-				stroke: "transparent",
-				strokeWidth: 0,
-				angle: 90,
-			},
-		},
-		width: 350,
-		height: 350,
-		padding: 50,
-	},
-	bar: {
-		style: {
-			data: {
-				fill: "#4a90e2",
-				padding: 0,
-				strokeWidth: 0,
-			},
-			labels: {
-				fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-				fontSize: 7,
-				letterSpacing: "normal",
-				padding: 8,
-				fill: "#223243",
-				stroke: "transparent",
-				strokeWidth: 0,
-			},
-		},
-		width: 350,
-		height: 350,
-		padding: 20,
-	},
-
-	chart: {
-		width: 500,
-		height: 100,
-		padding: 20,
-	},
-
-	group: {
-		colorScale: ["#223243", "#FFF59D"],
-		width: 350,
-		height: 350,
-		padding: 50,
-	},
-	legend: {
-		colorScale: ["#223243", "#FFF59D"],
-		gutter: 10,
-		orientation: "vertical",
-		titleOrientation: "top",
-		style: {
-			data: {
-				type: "circle",
-			},
-			labels: {
-				fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-				fontSize: 12,
-				letterSpacing: "normal",
-				padding: 8,
-				fill: "#455A64",
-				stroke: "transparent",
-				strokeWidth: 0,
-			},
-			title: {
-				fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-				fontSize: 12,
-				letterSpacing: "normal",
-				padding: 5,
-				fill: "#455A64",
-				stroke: "transparent",
-				strokeWidth: 0,
-			},
-		},
-	},
-	line: {
-		style: {
-			data: {
-				fill: "transparent",
-				opacity: 1,
-				stroke: "#455A64",
-				strokeWidth: 2,
-			},
-			labels: {
-				fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-				fontSize: 12,
-				letterSpacing: "normal",
-				padding: 8,
-				fill: "#455A64",
-				stroke: "transparent",
-				strokeWidth: 0,
-			},
-		},
-		width: 350,
-		height: 350,
-		padding: 50,
-	},
-
-	tooltip: {
-		style: {
-			fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-			fontSize: 5,
-			letterSpacing: "normal",
-			padding: 5,
-			fill: "#455A64",
-			stroke: "transparent",
-			strokeWidth: 0,
-			pointerEvents: "none",
-		},
-		flyoutStyle: {
-			stroke: "#223243",
-			strokeWidth: 0.2,
-			fill: "#f0f0f0",
-			pointerEvents: "none",
-		},
-		cornerRadius: 2,
-		pointerLength: 50,
-	},
-}
 const Chart = ({ data }) => {
-	const conditionData = data.length > 0 && data
-	console.log(conditionData)
+	const conditionData = data
 
 	return (
 		<>
 			<VictoryChart height={200}>
-				{/* <VictoryLabel
-					text={conditionalLabel}
-					x={225}
-					y={8}
-					textAnchor="middle"
-					style={{ fill: "#120faa" }}
-				/> */}
 				<VictoryLine
 					y={() => 1}
 					style={{
 						data: {
-							stroke: "#bbbbbb",
-							strokeWidth: 0.3,
+							stroke: "white",
+							strokeWidth: 0.2,
 						},
 					}}
 				/>
@@ -191,8 +31,8 @@ const Chart = ({ data }) => {
 					y={() => 2}
 					style={{
 						data: {
-							stroke: "#bbbbbb",
-							strokeWidth: 0.3,
+							stroke: "white",
+							strokeWidth: 0.2,
 						},
 					}}
 				/>
@@ -200,8 +40,8 @@ const Chart = ({ data }) => {
 					y={() => 3}
 					style={{
 						data: {
-							stroke: "#bbbbbb",
-							strokeWidth: 0.3,
+							stroke: "white",
+							strokeWidth: 0.2,
 						},
 					}}
 				/>
@@ -209,8 +49,8 @@ const Chart = ({ data }) => {
 					y={() => 4}
 					style={{
 						data: {
-							stroke: "#bbbbbb",
-							strokeWidth: 0.3,
+							stroke: "white",
+							strokeWidth: 0.2,
 						},
 					}}
 				/>
@@ -218,7 +58,7 @@ const Chart = ({ data }) => {
 					y={() => 5}
 					style={{
 						data: {
-							stroke: "#bbbbbb",
+							stroke: "white",
 							strokeWidth: 0.3,
 						},
 					}}
@@ -227,8 +67,8 @@ const Chart = ({ data }) => {
 					y={() => 4.5}
 					style={{
 						data: {
-							stroke: "#e8e8e8",
-							strokeWidth: 0.3,
+							stroke: "white",
+							strokeWidth: 0.1,
 						},
 					}}
 				/>
@@ -236,8 +76,8 @@ const Chart = ({ data }) => {
 					y={() => 0.5}
 					style={{
 						data: {
-							stroke: "#e8e8e8",
-							strokeWidth: 0.3,
+							stroke: "white",
+							strokeWidth: 0.1,
 						},
 					}}
 				/>
@@ -245,8 +85,8 @@ const Chart = ({ data }) => {
 					y={() => 1.5}
 					style={{
 						data: {
-							stroke: "#e8e8e8",
-							strokeWidth: 0.3,
+							stroke: "white",
+							strokeWidth: 0.1,
 						},
 					}}
 				/>
@@ -254,8 +94,8 @@ const Chart = ({ data }) => {
 					y={() => 2.5}
 					style={{
 						data: {
-							stroke: "#e8e8e8",
-							strokeWidth: 0.3,
+							stroke: "white",
+							strokeWidth: 0.1,
 						},
 					}}
 				/>
@@ -263,8 +103,8 @@ const Chart = ({ data }) => {
 					y={() => 3.5}
 					style={{
 						data: {
-							stroke: "#e8e8e8",
-							strokeWidth: 0.3,
+							stroke: "white",
+							strokeWidth: 0.1,
 						},
 					}}
 				/>
@@ -273,28 +113,88 @@ const Chart = ({ data }) => {
 						data={conditionData}
 						x={"assignment"}
 						y={"difficultyRating"}
+						labels={({ datum }) => {
+							if (datum.labels) {
+								let label = ""
+								datum.labels.forEach((name) => {
+									let labelItem = `${name.name}: ${name.difficultyRating} \n`
+									label += labelItem
+								})
+
+								return `Average Difficulty: ${datum.difficultyRating}\n  \n${label}`
+							}
+							return `Difficulty Rating:${datum.difficultyRating}`
+						}}
 						style={{ data: { fill: "#223243" } }}
 						barWidth={130 / conditionData.length}
 						animate={{
-							duration: 1500,
-							onLoad: { duration: 1000 },
+							duration: 700,
+							onLoad: { duration: 700 },
 						}}
-						// labels={({ datum }) => `${datum.x} \n moeilijk-rating: ${datum.y.toString().slice(0, 3)}`}
-						// labelComponent={<VictoryTooltip
-						//     flyoutWidth={60}
-						//     flyoutHeight={16}
-						//     cornerRadius={2}
-						//     pointerLength={4}
-						//     pointerWidth={4}
-						//     flyoutStyle={{
-						//         stroke: "#120faa",
-						//         strokeWidth: 0.6,
-						//         fill: "#ffffa0"
-						//     }}
-						//     style={{
-						//         fontSize: 6,
-						//         fill: "#120faa"
-						//     }} />}
+						labelComponent={
+							<VictoryTooltip
+								flyoutWidth={50}
+								pointerLength={9}
+								pointerWidth={2}
+								flyoutStyle={{
+									stroke: "#00ff99",
+									strokeWidth: 0.2,
+									fill: "white",
+								}}
+								style={{
+									fontSize: 4,
+									fill: "#223243",
+								}}
+							/>
+						}
+						events={[
+							{
+								target: "data",
+								eventHandlers: {
+									onMouseOver: () => {
+										return [
+											{
+												target:
+													"data",
+												mutation: () => ({
+													style: {
+														fill:
+															"#00ff99",
+														stroke:
+															"black",
+														strokeWidth:
+															"0.1",
+													},
+												}),
+											},
+											{
+												target:
+													"labels",
+												mutation: () => ({
+													active: true,
+												}),
+											},
+										]
+									},
+									onMouseOut: () => {
+										return [
+											{
+												target:
+													"data",
+												mutation: () => {},
+											},
+											{
+												target:
+													"labels",
+												mutation: () => ({
+													active: false,
+												}),
+											},
+										]
+									},
+								},
+							},
+						]}
 					/>
 					<VictoryBar
 						data={conditionData}
@@ -303,33 +203,106 @@ const Chart = ({ data }) => {
 						style={{ data: { fill: "#fbf9ab" } }}
 						barWidth={130 / conditionData.length}
 						animate={{
-							duration: 1500,
-							onLoad: { duration: 1000 },
+							duration: 700,
+							onLoad: { duration: 700 },
 						}}
-						// labels={({ datum }) => `${datum.x} \n leuk-rating: ${datum.y.toString().slice(0, 3)}`}
-						// labelComponent={<VictoryTooltip
-						//     flyoutWidth={60}
-						//     flyoutHeight={16}
-						//     cornerRadius={2}
-						//     pointerLength={4}
-						//     pointerWidth={4}
-						//     flyoutStyle={{
-						//         stroke: "#120faa",
-						//         strokeWidth: 0.6,
-						//         fill: "#ffffa0"
-						//     }}
-						//     style={{
-						//         fontSize: 6,
-						//         fill: "#120faa"
-						//     }} />}
+						labels={({ datum }) => {
+							if (datum.labels) {
+								let label = ""
+								datum.labels.forEach((name) => {
+									let labelItem = `${name.name}: ${name.enjoymentRating} \n`
+									label += labelItem
+								})
+								return `Average Enjoyment: ${datum.enjoymentRating}\n \n${label}`
+							}
+							return `Enjoyment Rating : ${datum.enjoymentRating}`
+						}}
+						labelComponent={
+							<VictoryTooltip
+								flyoutWidth={50}
+								pointerLength={9}
+								pointerWidth={1}
+								flyoutStyle={{
+									stroke: "#00ff99",
+									strokeWidth: 0.2,
+									fill: "white",
+								}}
+								style={{
+									fontSize: 4,
+									fill: "#223243",
+								}}
+							/>
+						}
+						events={[
+							{
+								target: "data",
+								eventHandlers: {
+									onMouseOver: () => {
+										return [
+											{
+												target:
+													"data",
+												mutation: () => ({
+													style: {
+														fill:
+															"#00ff99",
+														stroke:
+															"black",
+														strokeWidth:
+															"0.1",
+													},
+												}),
+											},
+											{
+												target:
+													"labels",
+												mutation: () => ({
+													active: true,
+												}),
+											},
+										]
+									},
+									onMouseOut: () => {
+										return [
+											{
+												target:
+													"data",
+												mutation: () => {},
+											},
+											{
+												target:
+													"labels",
+												mutation: () => ({
+													active: false,
+												}),
+											},
+										]
+									},
+								},
+							},
+						]}
 					/>
 				</VictoryGroup>
 				<VictoryAxis
+					style={{
+						ticks: {
+							fill: "transparent",
+							size: 2,
+							stroke: "black",
+							strokeWidth: 1,
+							strokeLinecap: "round",
+							strokeLinejoin: "round",
+						},
+					}}
 					tickLabelComponent={
 						<VictoryLabel
-							angle={70}
-							dx={-5}
-							dy={-3}
+							angle={() => {
+								return conditionData.length < 16
+									? 0
+									: 60
+							}}
+							dx={-8.5}
+							dy={-6}
 							style={{
 								fontSize: 5,
 								fill: "#223243",
@@ -338,16 +311,17 @@ const Chart = ({ data }) => {
 						/>
 					}
 				/>
+
 				<VictoryAxis
 					dependentAxis
 					domain={[0, 5]}
 					style={{
 						tickLabels: {
-							fontSize: 7,
+							fontSize: 5,
 							fill: "#223243",
 						},
 						axisLabel: {
-							fontSize: 6,
+							fontSize: 5,
 							padding: 35,
 							fill: "#223243",
 						},
@@ -360,11 +334,11 @@ const Chart = ({ data }) => {
 					data={[
 						{
 							name: "difficulty",
-							symbol: { fill: "#223243" },
+							symbol: { fill: "#223243", type: "square" },
 						},
 						{
 							name: "enjoyment",
-							symbol: { fill: "#fbf9ab" },
+							symbol: { fill: "#fbf9ab", type: "square" },
 						},
 					]}
 					style={{
@@ -375,69 +349,6 @@ const Chart = ({ data }) => {
 					}}
 				/>
 			</VictoryChart>
-			{/* <VictoryChart classname="testing" domainPadding={15} theme={wincTheme}>
-				<VictoryGroup
-					offset={3}
-					animate={{
-						duration: 900,
-						onLoad: { duration: 900 },
-					}}
-				>
-					<VictoryBar
-						labelComponent={<VictoryTooltip />}
-						data={data}
-						x="assignment"
-						y="difficultyRating"
-						tickValues={[1, 2, 3, 4, 5]}
-						tickFormat={data.map((avg) => avg.assignment)}
-					/>
-					<VictoryBar
-						labelComponent={<VictoryTooltip />}
-						data={data}
-						x="assignment"
-						y="enjoymentRating"
-						tickValues={[1, 2, 3, 4, 5]}
-						tickFormat={data.map((avg) => avg.assignment)}
-					/>
-				</VictoryGroup>
-				<VictoryAxis
-					// tickValues specifies both the number of ticks and where
-					// they are placed on the axis
-					tickValues={[1, 2, 3, 4, 5]}
-					tickFormat={data.map((avg) => avg.assignment)}
-				/>
-				<VictoryAxis dependentAxis />
-			</VictoryChart> */}
-
-			{/* <VictoryChart domainPadding={15} theme={wincTheme}>
-				<VictoryLine
-					style={{
-						data: { stroke: "#c43a31" },
-						parent: { border: "1px solid #ccc" },
-					}}
-					data={assignmentRatingAverage}
-					x="assignment"
-					y="difficultyRating"
-				/>
-				<VictoryLine
-					style={{
-						data: { stroke: "#ff00ff" },
-						parent: { border: "1px solid #ccc" },
-					}}
-					data={assignmentRatingAverage}
-					x="assignment"
-					y="enjoymentRating"
-				/>
-				<VictoryAxis
-					// tickValues specifies both the number of ticks and where
-					// they are placed on the axis
-					tickValues={[1, 2, 3, 4, 5]}
-					tickFormat={assignmentRatingAverage.map(
-						(avg) => avg.assignment
-					)}
-				/>
-				<VictoryAxis dependentAxis />
-			</VictoryChart> */}
 		</>
 	)
 }

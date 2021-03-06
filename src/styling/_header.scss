@@ -1,0 +1,28 @@
+header {
+	grid-area: h;
+}
+.header-container {
+	font-size: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(34, 50, 67, 0.295);
+
+	.logo-students {
+		color: rgba(248, 255, 219, 1);
+		.angle {
+			margin-top: -10px;
+		}
+	}
+}
+
+@keyframes rotating {
+	from {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg) scale(0.1);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg) scale(2.3);
+	}
+}
