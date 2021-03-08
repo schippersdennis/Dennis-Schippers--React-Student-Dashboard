@@ -1,6 +1,28 @@
-.sort-form label {
-	margin-right: 20px;
-}
-.sort-form input {
-	margin-right: 5px;
+.sort-option {
+	margin: 30px 0;
+	border-right: 1px solid rgba(34, 50, 67, 0.44);
+	border-left: 1px solid rgba(34, 50, 67, 0.44);
+	border-bottom: 1px solid rgba(34, 50, 67, 0.44);
+	border-radius: 3px;
+	.banner-sort {
+		border-radius: 3px 3px 0 0;
+		background-color: rgba(34, 50, 67, 0.372);
+		color: rgb(34, 50, 67);
+		padding: 3px;
+	}
+	.sort-form {
+		display: flex;
+		flex-direction: column;
+
+		label {
+			margin: 0;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			cursor: pointer;
+		}
+		input {
+			margin: 5px;
+		}
+	}
 }

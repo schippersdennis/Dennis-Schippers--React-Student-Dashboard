@@ -10,6 +10,7 @@ export const StudentSwitch = ({ name, id, assignment, student }) => {
 			return (
 				<li>
 					<Form.Check
+						name="my-checkbox"
 						checked={data[name].checked}
 						onChange={() => {
 							studentSwitch(name)
@@ -30,15 +31,20 @@ export const StudentSwitch = ({ name, id, assignment, student }) => {
 		case "filter-assignment":
 			return (
 				<li>
-					<input
-						checked={assignment.checked}
-						onChange={() => {
-							handleCheckAssignment(assignment, name)
-						}}
-						type="checkbox"
-						value={assignment.assignment}
-					/>{" "}
-					{assignment.assignment}
+					<label>
+						<input
+							checked={assignment.checked}
+							onChange={() => {
+								handleCheckAssignment(
+									assignment,
+									name
+								)
+							}}
+							type="checkbox"
+							value={assignment.assignment}
+						/>{" "}
+						{assignment.assignment}
+					</label>
 				</li>
 			)
 		case "studentOverview":
@@ -50,7 +56,7 @@ export const StudentSwitch = ({ name, id, assignment, student }) => {
 						}
 						checked={student.checked}
 						type="switch"
-						id="student-switch"
+						id={student.name}
 						label={student.name}
 					/>
 				</li>

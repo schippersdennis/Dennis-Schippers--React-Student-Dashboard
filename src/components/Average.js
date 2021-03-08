@@ -45,40 +45,66 @@ const Average = () => {
 
 	return (
 		<div className="average">
-			<h1>show average results for students</h1>
-			<div className="student-switches">
-				<h3>
-					Select at least two students for a comparison of the average
-					results ({counter}) of ({students.length})
-				</h3>
-				<ul>{studentSwitches}</ul>
-			</div>
-			<div className="sort-option">
-				<h4>Sort options</h4>
-				{filterAverageData.length !== 1 ? (
-					<Sort state={studentsData} data="average" />
-				) : null}
-			</div>
+			<div className="average-container">
+				<div className="average-header">
+					Show the average ratings of the students
+				</div>
+				<div className="stylewrapper">
+					<div className="student-switches">
+						<div className="banner">
+							Select at least two students for a
+							comparison of the average results ({" "}
+							<span>{counter}</span> ) of (
+							<span>{students.length}</span>)
+						</div>
+						<ul>{studentSwitches}</ul>
+					</div>
+					{filterAverageData.length !== 1 ? (
+						<div className="sort-option">
+							<div className="banner-sort">
+								Sort options
+							</div>
+							<Sort state={studentsData} data="average" />
+						</div>
+					) : null}
 
-			<div className="assignment-options">
-				<h3>
-					Select assignment to show average per assignment - total (
-					{assignments.length})
-				</h3>
-				<select
-					defaultValue={studentsData.average.filter}
-					onChange={(event) => {
-						averageFilter(event.target.value)
-					}}
-				>
-					<option default value="showall">
-						Overview 56 assignments
-					</option>
-					{assignmentOptions}
-				</select>
-			</div>
-			<div className="chart">
-				{updateCondition.length > 0 && <Chart data={updateCondition} />}
+					<div className="assignment-options">
+						<div className="assignment-banner">
+							Select assignment to display - Current
+							selected (
+							{studentsData.average.filter ===
+							"showall" ? (
+								<span>
+									All ( {assignments.length} )
+								</span>
+							) : (
+								<span>
+									{
+										studentsData.average
+											.filter
+									}
+								</span>
+							)}
+							)
+						</div>
+						<select
+							defaultValue={studentsData.average.filter}
+							onChange={(event) => {
+								averageFilter(event.target.value)
+							}}
+						>
+							<option default value="showall">
+								All (56) Assignments
+							</option>
+							{assignmentOptions}
+						</select>
+					</div>
+				</div>
+				<div className="chart">
+					{updateCondition.length > 0 && (
+						<Chart data={updateCondition} />
+					)}
+				</div>
 			</div>
 		</div>
 	)

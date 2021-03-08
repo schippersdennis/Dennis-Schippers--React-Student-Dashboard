@@ -3,9 +3,13 @@ import "../styling/globals.css"
 import { NavItem } from "./NavItem"
 import useDashBoard from "./useDashBoard"
 import { NavLink } from "react-router-dom"
+import DropdownButton from "react-bootstrap/DropdownButton"
+import Button from "react-bootstrap/Button"
+import { useMediaQuery } from "@material-ui/core"
 
 const Navbar = () => {
 	const { students, assignments } = useDashBoard()
+	const isActive = useMediaQuery("(max-width:1028px)")
 
 	// Building Students Routing
 	const studentRoutes = students.map((person, index) => {
@@ -19,33 +23,73 @@ const Navbar = () => {
 
 	return (
 		<nav>
-			<div className="nav-container">
-				<div className="students-overview-average">
-					<h3>Students Overview</h3>
-					<ul>
-						<li>
-							<NavLink
-								className="nav-item"
-								activeClassName="is-active"
-								to={{
-									pathname: "/",
-									switch: true,
-								}}
+			{isActive ? (
+				<div className="nav-container">
+					<div className="students-overview-average">
+						{/* Button 1 */}
+
+						<NavLink
+							className="nav-item"
+							activeClassName="is-active"
+							to="/"
+						>
+							{" "}
+							<Button
+								href="/"
+								variant="primary"
+								id="dropdown-basic-button"
 							>
 								average all students
-							</NavLink>{" "}
-						</li>
-					</ul>
+							</Button>
+						</NavLink>
+
+						{/* button 2 */}
+						<DropdownButton
+							id="dropdown-basic-button"
+							title="Students"
+						>
+							{studentRoutes}
+						</DropdownButton>
+						{/* button 3 */}
+						<DropdownButton
+							id="dropdown-basic-button"
+							title="Assignments"
+						>
+							{assignmentRoutes}
+						</DropdownButton>
+					</div>
 				</div>
-				<div className="student">
-					<h3>Students</h3>
-					<ul>{studentRoutes}</ul>
+			) : (
+				<div className="nav-container-desktop">
+					<div className="nav-item">
+						<h3>Students Overview</h3>
+						<ul>
+							<li>
+								<NavLink
+									className="nav-item"
+									activeClassName="is-active"
+									to={{
+										pathname: "/",
+										switch: true,
+									}}
+								>
+									average all students
+								</NavLink>{" "}
+							</li>
+						</ul>
+					</div>
+					<div className="nav-item">
+						<h3>Students</h3>
+						<ul>{studentRoutes}</ul>
+					</div>
+					<div className="nav-item">
+						<h3>Assignments</h3>
+						<ul className="nav-assignments">
+							{assignmentRoutes}
+						</ul>
+					</div>
 				</div>
-				<div className="assignments">
-					<h3>Assignments</h3>
-					<ul>{assignmentRoutes}</ul>
-				</div>
-			</div>
+			)}
 		</nav>
 	)
 }

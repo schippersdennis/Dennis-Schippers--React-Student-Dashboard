@@ -1,4 +1,51 @@
-footer {
+.footer {
 	grid-area: f;
+	width: 100%;
+	margin: auto;
 	background-color: rgba(34, 50, 67, 0.295);
+	& .footer-container {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		& a {
+			width: 33.3vw;
+			color: rgb(34, 50, 67);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-decoration: none;
+			font-size: 20px;
+			& p {
+				margin-top: 20px;
+			}
+			& .footer-icon {
+				margin-right: 5px;
+			}
+			&:visited {
+				color: rgb(34, 50, 67);
+			}
+			&:hover {
+				transition: 350ms;
+				background-color: rgb(34, 50, 67);
+				color: rgba(248, 255, 219, 1);
+			}
+		}
+	}
+	& .naw {
+		margin-top: 20px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		& .footer-icon {
+			vertical-align: middle;
+			margin-left: 5px;
+			margin-right: 4px;
+
+			color: rgba(248, 255, 219, 1);
+		}
+	}
+}
+@media (min-width: 1028px) {
 }

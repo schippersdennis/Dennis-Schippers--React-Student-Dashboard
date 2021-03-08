@@ -17,7 +17,7 @@ const Chart = ({ data }) => {
 
 	return (
 		<>
-			<VictoryChart height={200}>
+			<VictoryChart height={220}>
 				<VictoryLine
 					y={() => 1}
 					style={{
@@ -304,7 +304,7 @@ const Chart = ({ data }) => {
 							dx={-8.5}
 							dy={-6}
 							style={{
-								fontSize: 5,
+								fontSize: 4,
 								fill: "#223243",
 							}}
 							textAnchor={"start"}
@@ -317,12 +317,7 @@ const Chart = ({ data }) => {
 					domain={[0, 5]}
 					style={{
 						tickLabels: {
-							fontSize: 5,
-							fill: "#223243",
-						},
-						axisLabel: {
-							fontSize: 5,
-							padding: 35,
+							fontSize: 4,
 							fill: "#223243",
 						},
 					}}
@@ -343,7 +338,7 @@ const Chart = ({ data }) => {
 					]}
 					style={{
 						labels: {
-							fontSize: 6,
+							fontSize: 4,
 							fill: "#120faa",
 						},
 					}}

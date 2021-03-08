@@ -28,16 +28,29 @@ const Student = () => {
 
 	const updatedData = filterChecked(data[name].assignments)
 	const sortedArr = updatedData.length > 0 ? setSort(sortValue, updatedData) : updatedData
+	const counter = data[name].assignments.length
 
 	return (
 		<div className="student">
-			<h1>Show results by student: {name}</h1>
-			<div className="student-options">
-				<div className="filter-options">
-					<h4>Filter options</h4>
-					<ul>{filterAssignments}</ul>
-					<h4>
+			<div className="student-container">
+				<div className="student-header">
+					Show results by student:<span> {name}</span>
+				</div>
+				<div className="student-options">
+					<div className="banner-lines">
+						<div className="banner">
+							<div>
+								Select assignments to include in
+								Chart - Total: (
+								<span> {sortedArr.length} </span>)
+								of (<span> {counter} </span>)
+							</div>
+						</div>
+						<ul className="filter-ul">{filterAssignments}</ul>
+					</div>
+					<div className="filter-switch">
 						<Form.Check
+							className="switch-inv"
 							onChange={() => {
 								selectAllAssignments(name)
 							}}
@@ -45,22 +58,26 @@ const Student = () => {
 							id="student-switch"
 							label="Invert assignment selections"
 						/>
-					</h4>
-				</div>
-
-				{sortedArr.length >= 2 && (
-					<div className="sort-options">
-						<h4>Sort options</h4>
-						<Sort
-							state={studentsData}
-							data="data"
-							name={name}
-						/>
 					</div>
-				)}
-			</div>
-			<div className="chart">
-				{sortedArr.length > 0 && <Chart data={sortedArr} />}
+
+					<div className="sort-wrapper">
+						{sortedArr.length >= 2 && (
+							<div className="sort-option">
+								<div className="banner-sort">
+									Sort options
+								</div>
+								<Sort
+									state={studentsData}
+									data="data"
+									name={name}
+								/>
+							</div>
+						)}
+					</div>
+				</div>
+				<div className="chart">
+					{sortedArr.length > 0 && <Chart data={sortedArr} />}
+				</div>
 			</div>
 		</div>
 	)

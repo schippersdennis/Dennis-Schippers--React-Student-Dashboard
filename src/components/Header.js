@@ -1,17 +1,22 @@
 import React from "react"
 import "../styling/globals.css"
+import { Link } from "react-router-dom"
 import { GiAngelWings } from "react-icons/gi"
 
 const Header = () => {
 	return (
 		<header>
 			<div className="header-container">
-				<div className="logo-students">
-					St
-					<GiAngelWings className="angle" />
-					dents
-				</div>
-				<div className="logo-name">dashboard</div>
+				<Link className="header-home" to="/">
+					<div className="logo-students">
+						<>
+							<span> St </span>
+							<GiAngelWings className="angle" />
+							<span>dents</span>
+						</>
+						<div className="logo-name">dashboard</div>
+					</div>
+				</Link>
 			</div>
 		</header>
 	)

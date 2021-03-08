@@ -1,37 +1,86 @@
 .average {
 	grid-area: m;
-}
+	width: 100%;
+	font-size: 16px;
+	span {
+		color: rgba(248, 255, 219, 1);
+	}
+	.average-container {
+		width: 95%;
+		margin: auto;
+		.average-header {
+			text-align: center;
+			font-size: 22px;
+			font-weight: 500;
+			padding: 40px;
+		}
+		.student-switches {
+			border-right: 1px solid rgba(34, 50, 67, 0.44);
+			border-left: 1px solid rgba(34, 50, 67, 0.44);
+			border-bottom: 1px solid rgba(34, 50, 67, 0.44);
+			border-radius: 3px;
+			.banner {
+				border-radius: 3px 3px 0 0;
+				background-color: rgba(34, 50, 67, 0.372);
+				color: rgb(34, 50, 67);
+				padding: 3px;
+			}
+		}
 
-.average h1 {
-	margin: 20px;
+		.assignment-options {
+			margin-top: 20px;
+			border-radius: 3px;
+			border-right: 1px solid rgba(34, 50, 67, 0.44);
+			border-left: 1px solid rgba(34, 50, 67, 0.44);
+			border-bottom: 1px solid rgba(34, 50, 67, 0.44);
+			.assignment-banner {
+				border-radius: 3px 3px 0 0;
+				background-color: rgba(34, 50, 67, 0.372);
+				color: rgb(34, 50, 67);
+				padding: 3px;
+			}
+			select {
+				width: 100%;
+				border: 1px solid rgba(248, 255, 219, 1);
+				border-radius: 0 0 3px 3px;
+				padding: 3px;
+				outline: none;
+				font-size: 14px;
+				cursor: pointer;
+				option {
+					color: rgb(34, 50, 67);
+					font-family: "Trebuchet MS", "Lucida Sans Unicode",
+						"Lucida Grande", "Lucida Sans", Arial, sans-serif,
+						sans-serif;
+				}
+			}
+		}
+	}
 }
+@media (min-width: 1028px) {
+	.stylewrapper {
+		max-width: 1000px;
+		margin: auto;
+		display: grid;
+		grid-gap: 10px;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 150px auto;
+		grid-template-areas:
+			"s s r r"
+			"o o o o";
 
-.student-switches {
-	margin: 20px;
-}
-.student-switches ul {
-	display: grid;
-	grid-template-columns: repeat(3, 200px);
-	grid-template-rows: repeat(4, auto);
-}
-.sort-option {
-	margin: 20px;
-}
-.assignment-options {
-	margin: 20px;
-}
-.assignment-options select {
-	cursor: pointer;
-	border: 1px solid rgb(34, 50, 67);
-	color: rgb(34, 50, 67);
-	border-radius: 5px;
-	outline: none;
-	padding: 5px;
-}
-.select-option {
-	color: rgb(34, 50, 67);
-	cursor: pointer;
-}
-.chart .test {
-	cursor: crosshair;
+		.student-switches {
+			grid-area: s;
+			max-width: 500px;
+		}
+		.sort-option {
+			grid-area: r;
+			height: 100%;
+			margin: auto;
+			width: 500px;
+		}
+		.assignment-options {
+			grid-area: o;
+		}
+	}
 }

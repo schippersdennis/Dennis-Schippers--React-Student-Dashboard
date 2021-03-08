@@ -36,27 +36,37 @@ const Assignment = () => {
 	const sortedArr = counter > 0 && setSort(sortValue, chartData)
 
 	return (
-		<div className="assignment">
-			<h1>show results per assignment : {name}</h1>
-			<div className="students-overview">
-				<h4>
-					switch to inlcude student in chart - selected students{" "}
-					{counter}
-				</h4>
-				<ul>{studentsOverview}</ul>
-			</div>
-
-			{sortedArr.length > 0 && (
-				<div className="chart">
-					<Sort
-						state={studentsData}
-						data="dataAssignments"
-						name={name}
-						condition={"name"}
-					/>
-					<Chart data={sortedArr} />
+		<div className="assignment-container">
+			<div className="assignment">
+				<div className="assignment-header">
+					show results per assignment:<span> {name} </span>
 				</div>
-			)}
+				<div className="student-switches">
+					<div className="banner">
+						switch to inlcude student in chart - selected
+						students: (<span> {counter} </span>)
+					</div>
+					<ul>{studentsOverview}</ul>
+				</div>
+				<div className="sort-wrapper">
+					{sortedArr.length > 0 && (
+						<div className="wrapper">
+							<div className="sort-option">
+								<div className="banner-sort">
+									Sort options
+								</div>
+								<Sort
+									state={studentsData}
+									data="dataAssignments"
+									name={name}
+									condition={"name"}
+								/>
+							</div>
+							<Chart data={sortedArr} />
+						</div>
+					)}
+				</div>
+			</div>
 		</div>
 	)
 }
