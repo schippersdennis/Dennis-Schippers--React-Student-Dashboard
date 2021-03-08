@@ -78,7 +78,7 @@ export const StudentStateProvider = (props) => {
 
 			const newState = {
 				assignments: assignments,
-				students: students,
+				students: students.sort(),
 				data: updatedData,
 				dataAssignments: assignmentData,
 				average: {

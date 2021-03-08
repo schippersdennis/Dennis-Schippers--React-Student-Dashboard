@@ -1,5 +1,5 @@
-import "../styling/globals.css"
 import React from "react"
+import "../styling/globals.css"
 import useDashBoard from "./useDashBoard"
 
 const Sort = ({ state, data, name, condition }) => {
@@ -9,7 +9,6 @@ const Sort = ({ state, data, name, condition }) => {
 	return (
 		<form
 			className="sort-form"
-			defaultChecked
 			onChange={(event) => {
 				const value = event.target.value
 				setRadio(value, state, data, name)

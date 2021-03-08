@@ -10,6 +10,7 @@ const Assignment = () => {
 	const { name } = useParams()
 	const { dataAssignments, studentsData, setSort } = useDashBoard()
 	const path = dataAssignments[name].students
+
 	//Building Student Switch Buttons
 	const studentsOverview = dataAssignments[name].students.map((student, index) => {
 		return (
@@ -21,6 +22,7 @@ const Assignment = () => {
 			/>
 		)
 	})
+
 	const chartData =
 		path.length > 0 &&
 		path

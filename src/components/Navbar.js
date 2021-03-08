@@ -6,7 +6,6 @@ import { NavLink } from "react-router-dom"
 import DropdownButton from "react-bootstrap/DropdownButton"
 import Button from "react-bootstrap/Button"
 import { useMediaQuery } from "@material-ui/core"
-import { FcBarChart } from "react-icons/fc"
 import { GiAura, GiAngelWings, GiBlackBook } from "react-icons/gi"
 
 const Navbar = () => {
@@ -29,12 +28,7 @@ const Navbar = () => {
 				<div className="nav-container">
 					<div className="students-overview-average">
 						{/* Button 1 */}
-
-						<NavLink
-							className="nav-item"
-							activeClassName="is-active"
-							to="/"
-						>
+						<NavLink exact className="nav-item" to="/">
 							{" "}
 							<Button
 								href="/"
@@ -59,29 +53,31 @@ const Navbar = () => {
 						>
 							{assignmentRoutes}
 						</DropdownButton>
+						{/* button 4 */}
 					</div>
 				</div>
 			) : (
 				<div className="nav-container-desktop">
 					<div className="nav-wrapper">
-						<div className="nav-item">
+						<div className="nav-group">
 							<div className="icon-wrapper">
 								<GiAngelWings className="iconChart" />
-								<h3>Students Overview</h3>
+								<h3>Overview</h3>
 							</div>
 							<ul>
 								<li>
 									<NavLink
+										exact
 										className="nav-item"
 										activeClassName="is-active"
 										to="/"
 									>
-										Average all students
-									</NavLink>{" "}
+										All Students
+									</NavLink>
 								</li>
 							</ul>
 						</div>
-						<div className="nav-item">
+						<div className="nav-group">
 							<div className="icon-wrapper">
 								<GiAura className="iconChart" />
 								<h3>Students</h3>
@@ -89,7 +85,7 @@ const Navbar = () => {
 
 							<ul>{studentRoutes}</ul>
 						</div>
-						<div className="nav-item">
+						<div className="nav-group">
 							<div className="icon-wrapper">
 								<GiBlackBook className="iconChart" />
 								<h3>Assignments</h3>

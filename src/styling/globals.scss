@@ -19,6 +19,23 @@ body {
 	background: linear-gradient(90deg, rgba(248, 255, 219, 1) 0%, rgba(10, 156, 226, 1) 100%);
 	color: rgb(34, 50, 67);
 }
+::-webkit-scrollbar {
+	width: 7px;
+	height: 7px;
+}
+::-webkit-scrollbar-thumb {
+	background: #cccccc;
+	border-radius: 15px;
+	box-shadow: inset 7px 7px 12px #e8e8e8;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(13deg, #c7ceff 14%, #f9d4ff 64%);
+}
+::-webkit-scrollbar-track {
+	background: #ffffff;
+	border-radius: 15px;
+	box-shadow: inset 7px 10px 12px #f0f0f0;
+}
 
 .App {
 	height: 100vh;
@@ -36,12 +53,12 @@ body {
 	.App {
 		width: 100%;
 		display: grid;
-		grid-template-columns: 250px repeat(3, 1fr) 250px;
+		grid-template-columns: 250px repeat(3, 1fr);
 		grid-template-rows: auto auto 1fr auto;
 		grid-template-areas:
-			"h h h h h"
-			"n m m m ."
-			"n m m m ."
-			"f f f f f";
+			"n h h h "
+			"n m m m "
+			"n m m m "
+			"n f f f ";
 	}
 }

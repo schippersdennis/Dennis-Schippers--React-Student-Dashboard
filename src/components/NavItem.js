@@ -11,11 +11,17 @@ export const NavItem = ({ name, id }) => {
 	if (id === "assignment") path = `/assignment/${name}`
 
 	return isActive ? (
-		<NavLink className="nav-item" activeClassName="is-active" to={path}>
+		<NavLink className="nav-item" to={path}>
 			<Dropdown.Item href={path}>{name}</Dropdown.Item>
 		</NavLink>
 	) : (
-		<NavLink className="nav-item" activeClassName="is-active" to={path}>
+		<NavLink
+			exact
+			style={{ textDecoration: "none" }}
+			className="nav-item"
+			activeClassName="is-active"
+			to={path}
+		>
 			<li>{name}</li>
 		</NavLink>
 	)

@@ -29,7 +29,10 @@ const Average = () => {
 	const keys = Object.keys(studentsData.average.radioBox)
 	const sortValue = keys.filter((key) => studentsData.average.radioBox[key]).toString()
 
-	const sortedArr = averageAssignments.length > 0 && setSort(sortValue, averageAssignments)
+	const sortedArr =
+		averageAssignments.length > 0 &&
+		setSort(sortValue, averageAssignments, studentsData.average.reverse)
+
 	const filterAverageData = averageAssignments.filter((items) => {
 		return items.assignment === averageData.filter
 	})
@@ -47,7 +50,7 @@ const Average = () => {
 		<div className="average">
 			<div className="average-container">
 				<div className="average-header">
-					Show the average ratings of the students
+					Shows ratings of all <span> Students</span>
 				</div>
 				<div className="stylewrapper">
 					<div className="student-switches">

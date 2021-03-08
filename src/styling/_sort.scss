@@ -5,18 +5,17 @@
 	border-left: 1px solid rgba(34, 50, 67, 0.44);
 	border-bottom: 1px solid rgba(34, 50, 67, 0.44);
 	border-radius: 3px;
-	.banner-sort {
+	& .banner-sort {
 		border-radius: 3px 3px 0 0;
 		background-color: rgba(34, 50, 67, 0.372);
 		color: rgb(34, 50, 67);
 		padding: 3px;
 	}
-	.sort-form {
+	& .sort-form {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 		grid-auto-rows: auto;
-
-		label {
+		& label {
 			padding: 5px;
 			margin: 0;
 			display: flex;
@@ -24,7 +23,7 @@
 			align-items: center;
 			cursor: pointer;
 		}
-		input {
+		& input {
 			margin: 5px;
 		}
 	}

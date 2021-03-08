@@ -14,7 +14,6 @@ function App() {
 			<div className="App">
 				<StudentStateProvider>
 					<Header />
-
 					<Navbar />
 					<Switch>
 						<Route exact path="/">

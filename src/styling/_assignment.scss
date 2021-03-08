@@ -1,11 +1,14 @@
 .assignment-container {
 	grid-area: m;
 	width: 100%;
+	& span {
+		color: rgba(248, 255, 219, 1);
+	}
 }
 .assignment {
 	width: 95%;
 	margin: auto;
-	.assignment-header {
+	& .assignment-header {
 		text-align: center;
 		font-size: 22px;
 		font-weight: 500;
@@ -17,7 +20,7 @@
 	border-left: 1px solid rgba(34, 50, 67, 0.44);
 	border-bottom: 1px solid rgba(34, 50, 67, 0.44);
 	border-radius: 3px;
-	ul {
+	& ul {
 		margin: 0;
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -28,23 +31,23 @@
 			cursor: pointer;
 		}
 	}
-	.banner {
+	& .banner {
 		border-radius: 3px 3px 0 0;
 		background-color: rgba(34, 50, 67, 0.372);
 		color: rgb(34, 50, 67);
 		padding: 3px;
 	}
 }
-span {
-	color: rgba(248, 255, 219, 1);
-}
 
 @media (min-width: 1028px) {
 	.assignment {
-		max-width: 1500px;
+		max-width: 1400px;
 		margin: auto;
 	}
 	.assignment-container .chart {
 		margin-top: 75px;
+	}
+	.assignment-header span {
+		font-size: 30px;
 	}
 }

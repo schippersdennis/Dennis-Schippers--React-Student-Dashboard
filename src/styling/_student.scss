@@ -1,72 +1,72 @@
-* {
-	margin: 0;
-	padding: 0;
-}
 .student {
 	grid-area: m;
 	width: 100%;
-	.student-container {
+	& .student-container {
 		width: 95%;
 		margin: auto;
 
-		.student-header {
+		& .student-header {
 			text-align: center;
 			font-size: 22px;
 			font-weight: 500;
 			padding: 40px;
-			span {
+			& span {
 				color: rgba(248, 255, 219, 1);
 			}
 		}
-		.filter-ul {
+		& .filter-ul {
 			list-style: none;
 			margin: 0;
 			padding: 10px;
 			display: grid;
 			grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 			grid-auto-rows: 20px;
-			li {
+			& li {
 				color: rgb(34, 50, 67);
-				label {
+				& label {
 					cursor: pointer;
 				}
 			}
 		}
 	}
-	.banner {
+	& .banner {
 		border-radius: 3px 3px 0 0;
 		background-color: rgba(34, 50, 67, 0.372);
 		color: rgb(34, 50, 67);
 		padding: 5px;
 		margin: 0;
-		span {
+		& span {
 			color: rgba(248, 255, 219, 1);
 		}
 	}
-	.banner-lines {
+	& .banner-lines {
 		border-right: 1px solid rgba(34, 50, 67, 0.44);
 		border-left: 1px solid rgba(34, 50, 67, 0.44);
 		border-bottom: 1px solid rgba(34, 50, 67, 0.44);
 		border-radius: 3px;
 		font-size: 18px;
+		& .switch-inv {
+			label {
+				cursor: pointer;
+			}
+		}
 	}
-	.filter-switch {
+	& .filter-switch {
 		padding: 5px;
 		font-size: 18px;
-	}
-}
-.switch-inv {
-	label {
-		cursor: pointer;
 	}
 }
 
 @media (min-width: 1028px) {
 	.student-container {
-		max-width: 1500px;
+		max-width: 1300px;
 		margin: auto;
 	}
 	.student .chart {
+		margin-top: -20px;
 		max-width: 1300px;
+	}
+	.student-header span {
+		font-size: 30px;
 	}
 }

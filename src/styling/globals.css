@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.assignment-container span {
+  color: #f8ffdb;
+}
+
 .assignment {
   width: 95%;
   margin: auto;
@@ -48,17 +52,16 @@
   padding: 3px;
 }
 
-span {
-  color: #f8ffdb;
-}
-
 @media (min-width: 1028px) {
   .assignment {
-    max-width: 1500px;
+    max-width: 1400px;
     margin: auto;
   }
   .assignment-container .chart {
     margin-top: 75px;
+  }
+  .assignment-header span {
+    font-size: 30px;
   }
 }
 
@@ -133,8 +136,11 @@ span {
 
 @media (min-width: 1028px) {
   .stylewrapper {
-    max-width: 1500px;
+    max-width: 1350px;
     margin: auto;
+  }
+  .average-header span {
+    font-size: 25px;
   }
 }
 
@@ -142,6 +148,7 @@ span {
   .chart {
     margin: auto;
     max-width: 1500px;
+    cursor: pointer;
   }
 }
 
@@ -235,26 +242,14 @@ header a:link {
   text-decoration: none;
 }
 
-header a:visited {
-  text-decoration: none;
-}
-
-header a:hover {
-  text-decoration: none;
-}
-
-header a:active {
-  text-decoration: none;
-}
-
-.header-container {
+header .header-container {
   padding-top: 40px;
   padding-bottom: 20px;
   font-size: 40px;
   background-color: rgba(34, 50, 67, 0.295);
 }
 
-.header-container .logo-students {
+header .header-container .logo-students {
   cursor: pointer;
   color: #f8ffdb;
   display: -webkit-box;
@@ -267,7 +262,7 @@ header a:active {
           justify-content: center;
 }
 
-.header-container .logo-students .angle {
+header .header-container .logo-students .angle {
   margin-top: 5px;
   animation: animationFrames linear 3s;
   animation-iteration-count: infinite;
@@ -286,7 +281,7 @@ header a:active {
   -ms-transform-origin: 50% 0%;
 }
 
-.header-container .logo-students .logo-name {
+header .header-container .logo-students .logo-name {
   color: #223243;
 }
 
@@ -372,11 +367,7 @@ nav .nav-container .students-overview-average {
   margin: auto;
 }
 
-a {
-  color: #f8ffdb;
-}
-
-#dropdown-basic-button {
+nav #dropdown-basic-button {
   width: 100%;
   margin-bottom: 5px;
   background-color: rgba(34, 50, 67, 0.672);
@@ -387,20 +378,11 @@ a {
   outline: none;
 }
 
-.nav-item {
-  color: #223243;
+nav .nav-item {
   width: 100%;
 }
 
-.nav-item a {
-  color: #223243;
-}
-
-.nav-item a:visited {
-  color: #223243;
-}
-
-.dropdown-menu.show {
+nav .dropdown-menu.show {
   max-height: 350px;
   overflow-y: scroll;
 }
@@ -419,69 +401,54 @@ a {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .nav-container-desktop .nav-item {
+    color: #223243;
+  }
   .nav-container-desktop .nav-wrapper {
     padding: 20px;
   }
-  .nav-item h3 {
-    text-decoration: underline;
-  }
-  .nav-item ul {
-    list-style: none;
-  }
-  .nav-item ul li {
-    padding-left: 40px;
-  }
-  .nav-item ul li:hover {
-    width: 100%;
-    background-color: #223243;
-    color: #f8ffdb;
-    border-radius: 3px;
-  }
-  .nav-item ul li:hover > a {
-    color: #f8ffdb;
-    text-decoration: none;
-  }
-  .nav-item .nav-assignments {
+  .nav-container-desktop .nav-group .nav-assignments {
     margin-right: 10px;
     overflow-y: scroll;
     min-height: 100px;
     max-height: 600px;
   }
-  .icon-wrapper {
+  .nav-container-desktop .nav-group .icon-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .icon-wrapper .iconChart {
+  .nav-container-desktop .nav-group .icon-wrapper .iconChart {
     font-size: 30px;
     margin-right: 10px;
   }
-  .nav-item ul li {
+  .nav-container-desktop .nav-group h3 {
+    text-decoration: underline;
+  }
+  .nav-container-desktop .nav-group ul {
+    list-style: none;
+  }
+  .nav-container-desktop .nav-group ul li {
+    padding-left: 40px;
     cursor: pointer;
   }
-}
-
-::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #cccccc;
-  border-radius: 15px;
-  -webkit-box-shadow: inset 7px 7px 12px #e8e8e8;
-          box-shadow: inset 7px 7px 12px #e8e8e8;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(13deg, #c7ceff 14%, #f9d4ff 64%);
-}
-
-::-webkit-scrollbar-track {
-  background: #ffffff;
-  border-radius: 15px;
-  -webkit-box-shadow: inset 7px 10px 12px #f0f0f0;
-          box-shadow: inset 7px 10px 12px #f0f0f0;
+  .nav-container-desktop .nav-group ul li:hover {
+    width: 100%;
+    background-color: #223243;
+    color: #f8ffdb;
+    border-radius: 3px;
+  }
+  .nav-container-desktop .nav-group ul li:hover > a {
+    color: #f8ffdb;
+    text-decoration: none;
+  }
+  .nav-container-desktop .nav-group .is-active {
+    color: #f8ffdb;
+    letter-spacing: 2px;
+    font-weight: 900;
+    font-size: 20px;
+    padding: -15px;
+  }
 }
 
 .sort-option {
@@ -525,11 +492,6 @@ a {
 
 .sort-option .sort-form input {
   margin: 5px;
-}
-
-* {
-  margin: 0;
-  padding: 0;
 }
 
 .student {
@@ -595,22 +557,26 @@ a {
   font-size: 18px;
 }
 
+.student .banner-lines .switch-inv label {
+  cursor: pointer;
+}
+
 .student .filter-switch {
   padding: 5px;
   font-size: 18px;
 }
 
-.switch-inv label {
-  cursor: pointer;
-}
-
 @media (min-width: 1028px) {
   .student-container {
-    max-width: 1500px;
+    max-width: 1300px;
     margin: auto;
   }
   .student .chart {
+    margin-top: -20px;
     max-width: 1300px;
+  }
+  .student-header span {
+    font-size: 30px;
   }
 }
 
@@ -630,6 +596,29 @@ body {
   color: #223243;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 15px;
+  -webkit-box-shadow: inset 7px 7px 12px #e8e8e8;
+          box-shadow: inset 7px 7px 12px #e8e8e8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(13deg, #c7ceff 14%, #f9d4ff 64%);
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 15px;
+  -webkit-box-shadow: inset 7px 10px 12px #f0f0f0;
+          box-shadow: inset 7px 10px 12px #f0f0f0;
+}
+
 .App {
   height: 100vh;
   display: -ms-grid;
@@ -646,11 +635,11 @@ body {
     width: 100%;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 250px (1fr)[3] 250px;
-        grid-template-columns: 250px repeat(3, 1fr) 250px;
+    -ms-grid-columns: 250px (1fr)[3];
+        grid-template-columns: 250px repeat(3, 1fr);
     -ms-grid-rows: auto auto 1fr auto;
         grid-template-rows: auto auto 1fr auto;
-        grid-template-areas: "h h h h h" "n m m m ." "n m m m ." "f f f f f";
+        grid-template-areas: "n h h h " "n m m m " "n m m m " "n f f f ";
   }
 }
 /*# sourceMappingURL=globals.css.map */
