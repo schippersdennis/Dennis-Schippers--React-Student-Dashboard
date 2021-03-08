@@ -62,10 +62,12 @@ const Assignment = () => {
 									condition={"name"}
 								/>
 							</div>
-							<Chart data={sortedArr} />
 						</div>
 					)}
 				</div>
+			</div>
+			<div className="chart">
+				<Chart data={sortedArr} />
 			</div>
 		</div>
 	)

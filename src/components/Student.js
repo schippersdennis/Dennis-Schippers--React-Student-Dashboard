@@ -47,17 +47,17 @@ const Student = () => {
 							</div>
 						</div>
 						<ul className="filter-ul">{filterAssignments}</ul>
-					</div>
-					<div className="filter-switch">
-						<Form.Check
-							className="switch-inv"
-							onChange={() => {
-								selectAllAssignments(name)
-							}}
-							type="switch"
-							id="student-switch"
-							label="Invert assignment selections"
-						/>
+						<div className="filter-switch">
+							<Form.Check
+								className="switch-inv"
+								onChange={() => {
+									selectAllAssignments(name)
+								}}
+								type="switch"
+								id="student-switch"
+								label="Invert assignment selections"
+							/>
+						</div>
 					</div>
 
 					<div className="sort-wrapper">
@@ -75,9 +75,9 @@ const Student = () => {
 						)}
 					</div>
 				</div>
-				<div className="chart">
-					{sortedArr.length > 0 && <Chart data={sortedArr} />}
-				</div>
+			</div>
+			<div className="chart">
+				{sortedArr.length > 0 && <Chart data={sortedArr} />}
 			</div>
 		</div>
 	)

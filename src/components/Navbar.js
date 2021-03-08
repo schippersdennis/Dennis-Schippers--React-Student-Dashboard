@@ -6,6 +6,8 @@ import { NavLink } from "react-router-dom"
 import DropdownButton from "react-bootstrap/DropdownButton"
 import Button from "react-bootstrap/Button"
 import { useMediaQuery } from "@material-ui/core"
+import { FcBarChart } from "react-icons/fc"
+import { GiAura, GiAngelWings, GiBlackBook } from "react-icons/gi"
 
 const Navbar = () => {
 	const { students, assignments } = useDashBoard()
@@ -61,32 +63,41 @@ const Navbar = () => {
 				</div>
 			) : (
 				<div className="nav-container-desktop">
-					<div className="nav-item">
-						<h3>Students Overview</h3>
-						<ul>
-							<li>
-								<NavLink
-									className="nav-item"
-									activeClassName="is-active"
-									to={{
-										pathname: "/",
-										switch: true,
-									}}
-								>
-									average all students
-								</NavLink>{" "}
-							</li>
-						</ul>
-					</div>
-					<div className="nav-item">
-						<h3>Students</h3>
-						<ul>{studentRoutes}</ul>
-					</div>
-					<div className="nav-item">
-						<h3>Assignments</h3>
-						<ul className="nav-assignments">
-							{assignmentRoutes}
-						</ul>
+					<div className="nav-wrapper">
+						<div className="nav-item">
+							<div className="icon-wrapper">
+								<GiAngelWings className="iconChart" />
+								<h3>Students Overview</h3>
+							</div>
+							<ul>
+								<li>
+									<NavLink
+										className="nav-item"
+										activeClassName="is-active"
+										to="/"
+									>
+										Average all students
+									</NavLink>{" "}
+								</li>
+							</ul>
+						</div>
+						<div className="nav-item">
+							<div className="icon-wrapper">
+								<GiAura className="iconChart" />
+								<h3>Students</h3>
+							</div>
+
+							<ul>{studentRoutes}</ul>
+						</div>
+						<div className="nav-item">
+							<div className="icon-wrapper">
+								<GiBlackBook className="iconChart" />
+								<h3>Assignments</h3>
+							</div>
+							<ul className="nav-assignments">
+								{assignmentRoutes}
+							</ul>
+						</div>
 					</div>
 				</div>
 			)}

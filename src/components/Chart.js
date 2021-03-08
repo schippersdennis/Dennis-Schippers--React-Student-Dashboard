@@ -17,7 +17,7 @@ const Chart = ({ data }) => {
 
 	return (
 		<>
-			<VictoryChart height={220}>
+			<VictoryChart height={180} padding={20} width={400}>
 				<VictoryLine
 					y={() => 1}
 					style={{
@@ -323,8 +323,8 @@ const Chart = ({ data }) => {
 					}}
 				/>
 				<VictoryLegend
-					x={185}
-					y={30}
+					x={165}
+					y={10}
 					orientation="horizontal"
 					data={[
 						{

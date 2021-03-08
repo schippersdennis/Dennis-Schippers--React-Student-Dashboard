@@ -14,7 +14,6 @@
 }
 body {
 	width: 100vw;
-
 	font-family: "Yanone Kaffeesatz", sans-serif !important;
 	background: rgb(186, 226, 26);
 	background: linear-gradient(90deg, rgba(248, 255, 219, 1) 0%, rgba(10, 156, 226, 1) 100%);
@@ -36,14 +35,13 @@ body {
 @media (min-width: 1028px) {
 	.App {
 		width: 100%;
-
 		display: grid;
-		grid-template-columns: 200px repeat(3, 1fr);
+		grid-template-columns: 250px repeat(3, 1fr) 250px;
 		grid-template-rows: auto auto 1fr auto;
 		grid-template-areas:
-			"n h h h"
-			"n m m m"
-			"n m m m"
-			"n f f f";
+			"h h h h h"
+			"n m m m ."
+			"n m m m ."
+			"f f f f f";
 	}
 }
