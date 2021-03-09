@@ -19,6 +19,7 @@ const useDashBoard = () => {
 			if (person.name === student) {
 				person.checked = !person.checked
 			}
+			return person
 		})
 		setStudentsData((prevState) => {
 			return { ...prevState, dataAssignments: updateAssignment }
@@ -59,16 +60,9 @@ const useDashBoard = () => {
 				parseFloat((enjoyment / amountStudents).toFixed(2)),
 			labels: labelData,
 		}
-
-		// return {
-		// 	assignment: assignment,
-		// 	difficultyRating: difficulty !== 0 ? difficulty / amountStudents : 0,
-		// 	enjoymentRating: enjoyment !== 0 ? enjoyment / amountStudents : 0,
-		// 	labels: labelData,
-		// }
 	})
 
-	//sort
+	//sort & filter functions
 	const stringCompare = (str1, str2) => {
 		str1 = str1.toLowerCase()
 		str2 = str2.toLowerCase()
@@ -103,12 +97,11 @@ const useDashBoard = () => {
 		})
 	}
 
-	//counter students include @ average
 	const studentCheckedCounter = Object.entries(studentsData.data).filter(
 		(item) => item[1].checked
 	).length
 
-	//student.js
+	// handle checkboxes & radiobtns
 	const handleCheckAssignment = (asssignment, name) => {
 		const updateStudentsData = { ...studentsData.data }
 		updateStudentsData[name].assignments.map((item) => {

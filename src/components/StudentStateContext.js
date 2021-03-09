@@ -20,7 +20,6 @@ export const StudentStateProvider = (props) => {
 	})
 
 	useEffect(() => {
-		//dataset for student
 		d3.csv("./rawData.csv").then((data) => {
 			let updatedData = {}
 			let assignments = []

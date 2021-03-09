@@ -1,12 +1,12 @@
+import React from "react"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Navbar from "./components/Navbar"
 import Average from "./components/Average"
 import Student from "./components/Student"
 import Assignment from "./components/Assignment"
-import React from "react"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import { StudentStateProvider } from "./components/StudentStateContext"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 function App() {
 	return (

@@ -1,5 +1,5 @@
-import Sort from "./Sort"
 import React from "react"
+import Sort from "./Sort"
 import Chart from "./Chart"
 import "../styling/globals.css"
 import useDashBoard from "./useDashBoard"

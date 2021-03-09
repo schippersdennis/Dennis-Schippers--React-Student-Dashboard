@@ -1,6 +1,6 @@
 import React from "react"
-import Dropdown from "react-bootstrap/Dropdown"
 import { NavLink } from "react-router-dom"
+import Dropdown from "react-bootstrap/Dropdown"
 import { useMediaQuery } from "@material-ui/core"
 
 export const NavItem = ({ name, id }) => {
@@ -11,10 +11,12 @@ export const NavItem = ({ name, id }) => {
 	if (id === "assignment") path = `/assignment/${name}`
 
 	return isActive ? (
+		//mobile nav-link
 		<NavLink className="nav-item" to={path}>
 			<Dropdown.Item href={path}>{name}</Dropdown.Item>
 		</NavLink>
 	) : (
+		//desktop nav-link
 		<NavLink
 			exact
 			style={{ textDecoration: "none" }}

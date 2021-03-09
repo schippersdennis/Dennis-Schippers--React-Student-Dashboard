@@ -25,6 +25,7 @@ const Navbar = () => {
 	return (
 		<nav>
 			{isActive ? (
+				//Render Mobile-Navbar
 				<div className="nav-container">
 					<div className="students-overview-average">
 						{/* Button 1 */}
@@ -57,6 +58,7 @@ const Navbar = () => {
 					</div>
 				</div>
 			) : (
+				//Render Navbar for desktop
 				<div className="nav-container-desktop">
 					<div className="nav-wrapper">
 						<div className="nav-group">

@@ -1,8 +1,8 @@
 import React from "react"
 import "../styling/globals.css"
+import { SiGmail } from "react-icons/si"
 import { FaGithub } from "react-icons/fa"
 import { ImLinkedin } from "react-icons/im"
-import { SiGmail } from "react-icons/si"
 import { FaCopyright } from "react-icons/fa"
 
 const Footer = () => {
