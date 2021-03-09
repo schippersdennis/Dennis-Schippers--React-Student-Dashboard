@@ -40,6 +40,9 @@
 }
 
 @media (min-width: 1028px) {
+	.assignment-container {
+		overflow-y: scroll;
+	}
 	.assignment {
 		max-width: 1400px;
 		margin: auto;

@@ -31,20 +31,23 @@ nav {
 
 @media (min-width: 1028px) {
 	.nav-container-desktop {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		height: 100%;
 		& .nav-item {
 			color: rgb(34, 50, 67);
 		}
 		& .nav-wrapper {
-			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 		}
 		& .nav-group {
+			padding-top: 10px;
+			padding-left: 10px;
+			width: 100%;
 			& .nav-assignments {
 				margin-right: 10px;
 				overflow-y: scroll;
-				max-height: 700px;
+				max-height: 400px;
 			}
 			& .icon-wrapper {
 				display: flex;

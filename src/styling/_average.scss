@@ -2,6 +2,7 @@
 	grid-area: m;
 	width: 100%;
 	font-size: 16px;
+
 	& span {
 		color: rgba(248, 255, 219, 1);
 	}
@@ -58,6 +59,9 @@
 	}
 }
 @media (min-width: 1028px) {
+	.average {
+		overflow-y: scroll;
+	}
 	.stylewrapper {
 		max-width: 1350px;
 		margin: auto;

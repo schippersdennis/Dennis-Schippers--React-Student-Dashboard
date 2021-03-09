@@ -58,13 +58,16 @@
 }
 
 @media (min-width: 1028px) {
+	.student {
+		overflow-y: scroll;
+	}
 	.student-container {
 		max-width: 1300px;
 		margin: auto;
 	}
 	.student .chart {
 		margin-top: -20px;
-		max-width: 1300px;
+		max-width: 1500px;
 	}
 	.student-header span {
 		font-size: 30px;
