@@ -30,3 +30,12 @@ As a user I have to be able to distinguish at a glance between the assignments a
 >
 
 >- Design: Create a tool that you are proud of and that you would like to show to a future employer. We pay particular attention to: legibility of the graphs.
+
+Slicing and dicing. - Choose one of the following ways: As a user of the tool, you can "slice and dice" the data in a number of ways.
+
+>- Option 1: As a user I want to be able to indicate by means of a checkbox whether I only want to show in the bar chart how nice the assignment was, only want to see how difficult the assignment was, or both.
+
+>- Option 2: As a user, in addition to filtering on 1 person, I also want to be able to filter on multiple people. That is why I want to see a checkbox in the overview of my students that I can do 
+>- tick if I want to include the data of this specific student in my graph
+>- uncheck if I want to exclude the data of this specific student from my graph.
+>- Option 3: As a user, I want to see a line-chart representation of my data showing the average grade for "nice" and the average grade for "difficult".
