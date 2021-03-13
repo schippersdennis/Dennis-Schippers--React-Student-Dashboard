@@ -39,3 +39,10 @@ As a user I have to be able to distinguish at a glance between the assignments a
 >- Tick if I want to include the data of this specific student in my graph
 >- Uncheck if I want to exclude the data of this specific student from my graph.
 >- Option 3: As a user I want to be able to see how 1 specific assignment scored. Therefore, I want to see a list of all the assignments that I can tick to show me a bar chart with the score on the y axis (as before) and the names of the students on the x axis.
+>
+**Create charts with a Library!**
+
+### Bonus features
+>- Make sure that the data can be sliced ​​and diced in more than 1 way (see requirement 3).
+>- Sort the students by average grades (high to low or low to high).
+
