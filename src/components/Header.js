@@ -12,7 +12,7 @@ const Header = () => {
 						<>
 							<span> St </span>
 							<GiAngelWings className="angle" />
-							<span>dents</span>
+							<span>dent</span>
 						</>
 						<div className="logo-name">dashboard</div>
 					</div>
