@@ -31,7 +31,7 @@ As a user I have to be able to distinguish at a glance between the assignments a
 
 >- Design: Create a tool that you are proud of and that you would like to show to a future employer. We pay particular attention to: legibility of the graphs.
 
-Slicing and dicing. - Choose one of the following ways: As a user of the tool, you can "slice and dice" the data in a number of ways.
+**Slicing and dicing. - Choose one of the following ways: As a user of the tool, you can "slice and dice" the data in a number of ways.
 
 >- Option 1: As a user I want to be able to indicate by means of a checkbox whether I only want to show in the bar chart how nice the assignment was, only want to see how difficult the assignment was, or both.
 
