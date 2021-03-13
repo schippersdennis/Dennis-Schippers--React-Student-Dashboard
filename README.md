@@ -25,5 +25,4 @@ It is up to you to model and structure the data correctly. Do not type the data 
 Your Web Application should display the following
 >- Dashboard Overview User story: As a user, when I open the homepage of the application, I want to see an overview in the form of a bar chart of the evaluations (fun & difficult) of all students.
 As a user I have to be able to distinguish at a glance between the assignments and the fun / difficult evaluation. Make sure that a clear distinction is made visually, for example by working with clear colors. 
-
 >-Separate routing per student As a user I want to see a list of the names of all students and be able to click on one of these students. When I click on a student name, I am taken to the route / {name-of-student}. The bar chart adjusts with the data of this student only.
