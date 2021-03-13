@@ -5,7 +5,7 @@ We would like to see, per assignment, the evaluation of each student in a "Bar C
 **Tools: Use a JavaScript framework such as React.
 
 ##### Assignment:  React Student Dashboard
-##### Result: https://student-dashboard-4149bd.netlify.app/
+##### Result: https://student-dashboard-9078b2.netlify.app/
 
 ![dash](https://user-images.githubusercontent.com/72910410/111028127-f7f1a600-83f4-11eb-8ba6-86b3540d6166.jpg)
 
