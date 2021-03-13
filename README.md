@@ -29,3 +29,4 @@ As a user I have to be able to distinguish at a glance between the assignments a
 >- Separate routing per student As a user I want to see a list of the names of all students and be able to click on one of these students. When I click on a student name, I am taken to the route / {name-of-student}. The bar chart adjusts with the data of this student only.
 >
 
+>- Design: Create a tool that you are proud of and that you would like to show to a future employer. We pay particular attention to: legibility of the graphs.
