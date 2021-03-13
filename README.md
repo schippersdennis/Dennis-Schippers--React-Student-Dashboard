@@ -22,7 +22,7 @@ The link below is to a spreadsheet file (in Google Docs) with a mountain of fake
 It is up to you to model and structure the data correctly. Do not type the data overflow, it is way too much data for that.
 
 ### Requirements:
-Your Web Application should display the following
+**Your Web Application should display the following**
 >- Dashboard Overview User story: As a user, when I open the homepage of the application, I want to see an overview in the form of a bar chart of the evaluations (fun & difficult) of all students.
 As a user I have to be able to distinguish at a glance between the assignments and the fun / difficult evaluation. Make sure that a clear distinction is made visually, for example by working with clear colors. 
 
