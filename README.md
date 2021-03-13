@@ -8,8 +8,9 @@ We would like to see, per assignment, the evaluation of each student in a "Bar C
 ##### Result: https://student-dashboard-9078b2.netlify.app/
 
 
-![dash](https://user-images.githubusercontent.com/72910410/111028571-c29a8780-83f7-11eb-9087-9636a0e2f6c8.jpg)
-![mobdash](https://user-images.githubusercontent.com/72910410/111028615-07beb980-83f8-11eb-9d47-17a62486ac2e.jpg)
+
+![dash](https://user-images.githubusercontent.com/72910410/111028655-389eee80-83f8-11eb-85ab-3c0ada3cfcef.jpg)
+
 
 
 
