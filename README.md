@@ -36,6 +36,6 @@ As a user I have to be able to distinguish at a glance between the assignments a
 >- Option 1: As a user I want to be able to indicate by means of a checkbox whether I only want to show in the bar chart how nice the assignment was, only want to see how difficult the assignment was, or both.
 
 >- Option 2: As a user, in addition to filtering on 1 person, I also want to be able to filter on multiple people. That is why I want to see a checkbox in the overview of my students that I can do 
->- tick if I want to include the data of this specific student in my graph
->- uncheck if I want to exclude the data of this specific student from my graph.
+>- Tick if I want to include the data of this specific student in my graph
+>- Uncheck if I want to exclude the data of this specific student from my graph.
 >- Option 3: As a user I want to be able to see how 1 specific assignment scored. Therefore, I want to see a list of all the assignments that I can tick to show me a bar chart with the score on the y axis (as before) and the names of the students on the x axis.
