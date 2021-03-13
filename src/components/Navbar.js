@@ -66,7 +66,7 @@ const Navbar = () => {
 								<GiAngelWings className="iconChart" />
 								<h3>Overview</h3>
 							</div>
-							<ul>
+							<ul className="all-students">
 								<li>
 									<NavLink
 										exact

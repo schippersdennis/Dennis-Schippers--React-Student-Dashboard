@@ -418,6 +418,7 @@ nav .dropdown-menu.show {
 
 @media (min-width: 1028px) {
   .nav-container-desktop {
+    padding: 20px;
     height: 100%;
   }
   .nav-container-desktop .nav-item {
